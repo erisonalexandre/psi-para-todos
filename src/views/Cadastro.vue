@@ -4,9 +4,9 @@
       <div class="col">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <p class="card-text">Imagino colocar imagem aqui representado o usuario paciente</p>
+             <img :src="require('../assets/paciente.svg')">
           </div>
-          <div class="card-footer bg-transparent border-success">Paciente</div>
+          <div class="card-footer"><router-link to="/cadpaciente">Paciente</router-link></div>
         </div>
         <card>
           <form-cadastro-paciente></form-cadastro-paciente>
@@ -15,17 +15,17 @@
       <div class="col">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <p class="card-text">Imagino colocar imagem aqui representado o usuario profissional</p>
+            <img :src="require('../assets/profissional.svg')">
           </div>
-          <div class="card-footer bg-transparent border-success">Profissional</div>
+          <div class="card-footer"><router-link to="/cadprofissional">Profissional</router-link></div>
         </div>
       </div>
       <div class="col">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <p class="card-text">Imagino colocar imagem aqui representado o usuario orgão</p>
+             <img :src="require('../assets/orgao.svg')">
           </div>
-          <div class="card-footer bg-transparent border-success">Orgão</div>
+          <div class="card-footer"><router-link to="/cadorgao">Orgão</router-link></div>
         </div>
       </div>
     </div>

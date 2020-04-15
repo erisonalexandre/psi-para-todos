@@ -12,8 +12,11 @@
             <input type="password" class="form-control" id="password">
           </div>
           <div class="form-group d-flex justify-content-center align-items-center flex-column" style="margin-top: 4rem">
-            <button class="psi-btn mb-4">Acessar</button>
-            <router-link to="/">Esqueci minha senha.</router-link>
+            <button class="psi-btn mb-4">
+              <p>Acessar</p>
+              <span>></span>
+            </button>
+            <router-link to="/esqueci">Esqueci minha senha.</router-link>
           </div>
         </form>
     </card>
@@ -25,18 +28,3 @@ export default {
   name: 'Login'
 }
 </script>
-
-<style>
-  .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100% - 81px);
-  }
-  .login > .card {
-    width: 100%;
-    padding: 15px;
-    margin: auto;
-    max-width: 450px;
-  }
-</style>
