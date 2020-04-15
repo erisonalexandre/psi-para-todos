@@ -1,5 +1,5 @@
 <template>
-  <div class="cad container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col">
         <div class="card" style="width: 18rem;">
@@ -8,6 +8,9 @@
           </div>
           <div class="card-footer bg-transparent border-success">Paciente</div>
         </div>
+        <card>
+          <form-cadastro-paciente></form-cadastro-paciente>
+        </card>
       </div>
       <div class="col">
         <div class="card" style="width: 18rem;">
@@ -30,8 +33,9 @@
 </template>
 
 <script>
+import FormCadastroPaciente from '../components/forms/FormCadastroPaciente'
 export default {
-  name: 'Cadastro'
-
+  name: 'Cadastro',
+  components: { FormCadastroPaciente }
 }
 </script>

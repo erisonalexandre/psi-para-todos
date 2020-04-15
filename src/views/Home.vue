@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home container">
     <section class="partone row" id="primeiro">
       <div class="col">
         <h1>A plataforma que conecta você ao atendimento ideal</h1>

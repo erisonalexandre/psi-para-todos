@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="" variant="info" class="navbar-psi" id="navbar-default">
+  <b-navbar toggleable="lg" type="dark" variant="info" class="navbar-psi" id="navbar-default">
     <div class="container">
 
       <router-link to="/" class="navbar-brand"><img :src="require('../assets/logo.svg')" class="img-fluid" style="max-height: 55px" alt=""></router-link>
@@ -30,6 +30,24 @@ export default {
 </script>
 
 <style lang="scss">
+@media (max-width: 991.98px) {
+  .navbar-collapse.collapsing, .navbar-collapse.show {
+    text-align: center;
+    z-index: 999;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    background: #FFF;
+    box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    -webkit-animation: show-navbar-collapse .2s ease forwards;
+    animation: show-navbar-collapse .2s ease forwards;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #808080 !important;
+  }
+  #btn-navbar {
+    align-items: center;
+  }
+}
 .navbar-psi {
   background: linear-gradient(90deg, #43C7FF 0%, #44A9FF 64.99%, #4584FF 102.13%);
 }

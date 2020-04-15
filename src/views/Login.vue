@@ -1,7 +1,6 @@
 <template>
   <div class="login">
-    <div class="card text-left">
-      <div class="card-body px-5">
+    <card class="px-5">
         <h1 class="text-center text-psi" style="margin-bottom: 4rem">Login</h1>
         <form>
           <div class="form-group mb-4">
@@ -17,8 +16,7 @@
             <router-link to="/">Esqueci minha senha.</router-link>
           </div>
         </form>
-      </div>
-    </div>
+    </card>
   </div>
 </template>
 
