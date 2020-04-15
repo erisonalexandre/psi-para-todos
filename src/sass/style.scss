@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap');
+
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
 
+* {
+  font-family: 'Nunito', sans-serif
+}
 
+input, button, select, optgroup, textarea {
+  font-family: 'Nunito', sans-serif
+}
 
-.psi-btn {
-
+.btn {
+  border-radius: 0.55rem;
 }

@@ -14,9 +14,9 @@
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <router-link to="/login" tag="button" class="btn btn-primary mr-md-2">login</router-link>
-          <router-link to="/cadastro" tag="button" class="btn btn-primary">cadastro</router-link>
+        <b-navbar-nav class="ml-auto" id="btn-navbar">
+          <router-link to="/login" tag="button" class="btn btn-primary mr-md-2">Login</router-link>
+          <router-link to="/cadastro" tag="button" class="btn btn-primary">Cadastro</router-link>
         </b-navbar-nav>
       </b-collapse>
     </div>
@@ -29,11 +29,29 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .navbar-psi {
   background: linear-gradient(90deg, #43C7FF 0%, #44A9FF 64.99%, #4584FF 102.13%);
 }
 .nav-link {
   color: #fff;
+}
+#btn-navbar {
+  .btn {
+    width: 6rem;
+    height: 1.75rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+  .btn:first-child {
+    background-color: #fff;
+    color: #458AFF;
+  }
+  .btn:last-child {
+    background-color: #FD3C65;
+  }
 }
 </style>
