@@ -4,20 +4,33 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
 
+@import "./inputs";
+
 * {
-  font-family: 'Nunito', sans-serif
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
 }
 
 input, button, select, optgroup, textarea {
   font-family: 'Nunito', sans-serif
 }
 
+html, body {
+  height: 100%;
+}
+
 #app {
   font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F8F9FA;
+  height: 100%;
 }
 
-.btn {
-  border-radius: 0.55rem;
+#app > div {
+  height: 100%;
+}
+
+.text-psi {
+  color: #458AFF;
 }

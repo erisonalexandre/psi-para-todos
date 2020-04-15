@@ -36,6 +36,9 @@ export default {
 .nav-link {
   color: #fff;
 }
+#navbar-default {
+  max-height: 81px;
+}
 #btn-navbar {
   .btn {
     width: 6rem;
