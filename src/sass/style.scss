@@ -12,6 +12,12 @@ input, button, select, optgroup, textarea {
   font-family: 'Nunito', sans-serif
 }
 
+#app {
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .btn {
   border-radius: 0.55rem;
 }

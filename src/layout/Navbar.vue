@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="" variant="info" class="navbar-psi">
+  <b-navbar toggleable="lg" type="" variant="info" class="navbar-psi" id="navbar-default">
     <div class="container">
 
       <router-link to="/" class="navbar-brand"><img :src="require('../assets/logo.svg')" class="img-fluid" style="max-height: 55px" alt=""></router-link>
