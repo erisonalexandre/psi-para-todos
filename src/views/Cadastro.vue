@@ -1,33 +1,33 @@
 <template>
   <div class="container" id="cadastro">
     <div class="row">
-      <div class="col">
+      <div class="col-md-4">
         <card>
           <div class="card-body">
             <img :src="require('../assets/paciente.svg')">
           </div>
           <template slot="footer">
-            <router-link to="/cadpaciente">Paciente</router-link>
+            <router-link to="/cadastro/paciente">Paciente</router-link>
           </template>
         </card>
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <card>
           <div class="card-body">
             <img :src="require('../assets/profissional.svg')">
           </div>
           <template slot="footer">
-            <router-link to="/cadprofissional">Profissional</router-link>
+            <router-link to="/cadastro/profissional">Profissional</router-link>
           </template>
         </card>
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <card>
           <div class="card-body">
             <img :src="require('../assets/orgao.svg')">
           </div>
           <template slot="footer">
-            <router-link to="/cadorgao">Orgão</router-link>
+            <router-link to="/cadastro/orgao">Orgão</router-link>
           </template>
         </card>
       </div>
@@ -43,14 +43,16 @@ export default {
 
 <style lang="scss">
   #cadastro {
+    a {
+      color: #fff;
+    }
     .card{
-      margin-top: 30px;
       .card-body{
         text-align: center;
         background-color: #FFFFFF;
         img{
           width: 242px;
-          height: 341px;
+          height: 241px;
         }
       }
 

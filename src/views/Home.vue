@@ -17,7 +17,7 @@
         </div>
       </div>
     </section>
-    <section class="parttwo" style="background:#E2ECFF">
+    <section class="parttwo" style="background:#E2ECFF" id="sobre">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-4 d-none d-md-block">
@@ -45,7 +45,7 @@
         </div>
       </div>
     </section>
-    <section class="container">
+    <section class="container" id="voce-profissional">
       <div class="partfour row">
         <div class="col">
           <h1>Você é profissional?</h1>
@@ -77,7 +77,7 @@ export default {
         $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', $('#conteudo-primeiro').height())
       })
     }
-    document.onload(() => {
+    $(window).on('load', function () {
       handleHomeContentHeight()
     })
   }
