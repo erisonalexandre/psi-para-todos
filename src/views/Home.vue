@@ -21,7 +21,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-4 d-none d-md-block">
-            <img :src="require('../assets/part2.svg')">
+            <img :src="require('../assets/part2.svg')" class="img-fluid">
           </div>
           <div class="col-md-8">
             <h1>O que é Psi Para Todos?</h1>
@@ -37,10 +37,10 @@
     <section class="partthree">
       <div class="container">
         <h1 class="mt-0">Venha ser nosso parceiro</h1>
-        <div>
-          <img :src="require('../assets/susam1.svg')" class="logo-partthree">
+        <div class="d-flex">
+          <img :src="require('../assets/susam1.svg')" class="logo-partthree img-fluid mx-auto">
           <img :src="require('../assets/vivamente1.svg')" class="logo-partthree d-none d-md-block">
-          <img :src="require('../assets/pisco1.svg')" class="logo-partthree">
+          <img :src="require('../assets/pisco1.svg')" class="logo-partthree img-fluid mx-auto">
           <img :src="require('../assets/clinica1.svg')" class="logo-partthree d-none d-md-block">
         </div>
       </div>
@@ -85,6 +85,15 @@ export default {
 </script>
 
 <style lang="scss">
+  @media (max-width: 767.98px) {
+    h1 {
+      font-size: 26px !important;
+    }
+    .parttwo {
+      padding-top: 20px !important;
+      padding-bottom: 15px;
+    }
+  }
   @media (max-width: 991.98px) {
     #primeiro {
       margin-top: 15px;
@@ -147,7 +156,8 @@ export default {
     padding-left: 30px;
     padding-right: 30px;
     text-align: right;
-
+    align-items: center;
+    display: flex;
     div {
 
       h1 {
