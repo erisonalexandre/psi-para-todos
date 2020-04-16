@@ -37,18 +37,21 @@ h1 {
   color: #4585FF;
 }
 
-button.btn-psi {
+button.psi-btn {
   width: 239px;
   height: 40px;
   background-color: #4589ff;
   border-radius: 1.30em;
-  padding-top: 10px;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
 
   p {
     color: #FFFFFF;
     display: inline-block;
     text-align: center;
-    width: 170px;
+    width: 186px;
+    margin: 0;
   }
 
   span {
