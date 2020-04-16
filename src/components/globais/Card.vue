@@ -3,6 +3,9 @@
     <div class="card-body">
       <slot></slot>
     </div>
+    <div class="card-footer">
+      <slot name="footer"></slot>
+    </div>
   </div>
 </template>
 

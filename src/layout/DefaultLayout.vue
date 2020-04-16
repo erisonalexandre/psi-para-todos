@@ -2,14 +2,17 @@
   <div>
     <navbar></navbar>
     <slot></slot>
+    <psi-footer></psi-footer>
   </div>
 </template>
 
 <script>
 import Navbar from './Navbar'
+import Footer from './Footer'
 export default {
   name: 'DefaultLayout',
   components: {
+    'psi-footer': Footer,
     Navbar
   },
   mounted () {

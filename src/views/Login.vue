@@ -7,7 +7,7 @@
             <label for="username" class="form-label">Nome</label>
             <input type="text" class="form-control" id="username">
           </div>
-          <div class="form-group" style="margin-top: 5rem">
+          <div class="form-group">
             <label for="password" class="form-label">Senha</label>
             <input type="password" class="form-control" id="password">
           </div>
@@ -28,3 +28,25 @@ export default {
   name: 'Login'
 }
 </script>
+
+<style lang="scss">
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100% - 81px);
+  }
+  .login > .card {
+    width: 100%;
+    padding: 15px;
+    margin: auto;
+    max-width: 450px;
+    h1{
+      font-weight: bold;
+    }
+  }
+
+</style>

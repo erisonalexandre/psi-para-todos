@@ -1,41 +1,67 @@
 <template>
-  <div class="container">
+  <div class="container" id="cadastro">
     <div class="row">
       <div class="col">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-             <img :src="require('../assets/paciente.svg')">
-          </div>
-          <div class="card-footer"><router-link to="/cadpaciente">Paciente</router-link></div>
-        </div>
         <card>
-          <form-cadastro-paciente></form-cadastro-paciente>
+          <div class="card-body">
+            <img :src="require('../assets/paciente.svg')">
+          </div>
+          <template slot="footer">
+            <router-link to="/cadpaciente">Paciente</router-link>
+          </template>
         </card>
       </div>
       <div class="col">
-        <div class="card" style="width: 18rem;">
+        <card>
           <div class="card-body">
             <img :src="require('../assets/profissional.svg')">
           </div>
-          <div class="card-footer"><router-link to="/cadprofissional">Profissional</router-link></div>
-        </div>
+          <template slot="footer">
+            <router-link to="/cadprofissional">Profissional</router-link>
+          </template>
+        </card>
       </div>
       <div class="col">
-        <div class="card" style="width: 18rem;">
+        <card>
           <div class="card-body">
-             <img :src="require('../assets/orgao.svg')">
+            <img :src="require('../assets/orgao.svg')">
           </div>
-          <div class="card-footer"><router-link to="/cadorgao">Orgão</router-link></div>
-        </div>
+          <template slot="footer">
+            <router-link to="/cadorgao">Orgão</router-link>
+          </template>
+        </card>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import FormCadastroPaciente from '../components/forms/FormCadastroPaciente'
 export default {
-  name: 'Cadastro',
-  components: { FormCadastroPaciente }
+  name: 'Cadastro'
 }
 </script>
+
+<style lang="scss">
+  #cadastro {
+    .card{
+      margin-top: 30px;
+      .card-body{
+        text-align: center;
+        background-color: #FFFFFF;
+        img{
+          width: 242px;
+          height: 341px;
+        }
+      }
+
+      .card-footer{
+        background-color: #4589ff;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+</style>
