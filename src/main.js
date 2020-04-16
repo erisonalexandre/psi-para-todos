@@ -9,6 +9,8 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import '@fortawesome/fontawesome-free/js/all.js'
 import './sass/style.scss'
 
+require('./bootstrap')
+
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 

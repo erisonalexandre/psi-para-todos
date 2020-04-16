@@ -1,9 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap');
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
+@import "./inputs";
 
+* {
+  font-family: 'Nunito', sans-serif;
+}
 
+input, button, select, optgroup, textarea {
+  font-family: 'Nunito', sans-serif
+}
 
-.psi-btn {
+html, body {
+  height: 100%;
+  background-color: #F8F9FA;
+  overflow-y: auto;
+}
+
+#app {
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: calc(100% - 69px);
+}
+
+#app > div {
+  height: 100%;
+}
+
+.text-psi {
+  color: #458AFF;
+}
+
+h1 {
+  color: #4585FF;
+}
+
+button.btn-psi {
+  width: 239px;
+  height: 40px;
+  background-color: #4589ff;
+  border-radius: 1.30em;
+  padding-top: 10px;
+
+  p {
+    color: #FFFFFF;
+    display: inline-block;
+    text-align: center;
+    width: 170px;
+  }
+
+  span {
+    display: inline-block;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 1.25rem;
+    text-align: center;
+    color: #4589FF;
+    font-weight: bold;
+    font-size: 20px;
+  }
 
 }
