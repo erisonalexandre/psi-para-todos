@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login altura-100-centro">
     <card class="px-5">
         <h1 class="text-center text-psi" style="margin-bottom: 4rem">Login</h1>
         <form>
@@ -30,15 +30,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: calc(100% - 81px);
-  }
   .login > .card {
     width: 100%;
     padding: 15px;

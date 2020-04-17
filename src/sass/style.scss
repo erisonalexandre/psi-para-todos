@@ -65,5 +65,12 @@ button.psi-btn {
     font-weight: bold;
     font-size: 20px;
   }
-
+}
+.altura-100-centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 81px);
 }

@@ -1,11 +1,11 @@
 <template>
-  <div class="cad-paciente">
+  <div class="altura-100-centro">
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CadPaciente'
+  name: 'CadastroOrgao'
 }
 </script>
