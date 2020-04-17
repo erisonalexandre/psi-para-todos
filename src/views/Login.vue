@@ -16,7 +16,7 @@
               <p>Acessar</p>
               <span>></span>
             </button>
-            <router-link to="/esqueci">Esqueci minha senha.</router-link>
+            <router-link :to="{name: 'Esqueci'}">Esqueci minha senha.</router-link>
           </div>
         </form>
     </card>

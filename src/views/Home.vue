@@ -9,7 +9,7 @@
             <div class="d-md-none mb-4">
               <img :src="require('../assets/part1.svg')" class="img-fluid">
             </div>
-            <button>SAIBA MAIS</button>
+            <router-link :to="{name: 'CadastroOrgao'}" tag="button">SAIBA MAIS</router-link>
           </div>
         </div>
         <div class="col d-none d-md-flex justify-content-center align-items-center p-5" style="box-sizing: border-box">
