@@ -9,7 +9,7 @@
             <div class="d-md-none mb-4">
               <img :src="require('../assets/part1.svg')" class="img-fluid">
             </div>
-            <router-link :to="{name: 'CadastroOrgao'}" tag="button">SAIBA MAIS</router-link>
+            <a href="#sobre" class="button">SAIBA MAIS</a>
           </div>
         </div>
         <div class="col d-none d-md-flex justify-content-center align-items-center p-5" style="box-sizing: border-box">
@@ -28,7 +28,7 @@
             <h2>Uma solução que une a população e psicólogos facilitando a conexão e agendamento de serviços psicológicos
               gratuito, de maneira simples, humana e segura, com apenas um clique!</h2>
             <div class="d-flex justify-content-center">
-              <button>CADASTRAR</button>
+              <router-link :to="{name: 'Cadastro'}" tag="button">CADASTRAR</router-link>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
               <img :src="require('../assets/jarrodeflor.svg')">
             </div>
           </div>
-          <button>QUERO PARTICIPAR</button>
+          <router-link :to="{name: 'CadastroPofissional'}" tag="button">QUERO PARTICIPAR</router-link>
         </div>
       </div>
     </section>
