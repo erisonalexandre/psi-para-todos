@@ -39,10 +39,23 @@ export default {
   mixins: [animarInputs],
   methods: {
     submit () {
-      // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
-      axios.post('/sessions', this.form).then((response) => {
-        console.log(response)
+      this.$auth.login({
+        data: this.form,
+        success: function ({ data }) {
+          this.$auth.token('jwt-auth', data.token)
+          this.$auth.user(data.user)
+          localStorage.setItem('user', JSON.stringify(data.user))
+        },
+        error: function (error) {
+          console.error(error)
+        },
+        rememberMe: true,
+        fetchUser: false
       })
+      // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
+      // axios.post('/sessions', this.form).then((response) => {
+      //   console.log(response)
+      // })
     }
   }
 }
