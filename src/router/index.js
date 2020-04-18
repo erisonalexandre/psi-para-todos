@@ -9,6 +9,7 @@ import Cadastro from '../views/cadastro/Cadastro.vue'
 import CadastroPaciente from '../views/cadastro/CadastroPaciente.vue'
 import CadastroProfissional from '../views/cadastro/CadastroProfissional.vue'
 import CadastroOrgao from '../views/cadastro/CadastroOrgao.vue'
+import DashboardPaciente from '../views/DashboardPaciente.vue'
 import DashboardProfissional from '../views/DashboardProfissional.vue'
 
 Vue.use(VueRouter)
@@ -32,7 +33,10 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: Login,
+    meta: {
+      auth: false
+    }
   },
   {
     path: '/esqueci',
@@ -62,6 +66,20 @@ const routes = [
     //     forbiddenRedirect: '/403'
     //   }
     // }
+  },
+  {
+    path: '/dashboard/paciente',
+    name: 'DashboardPaciente',
+    component: DashboardPaciente,
+    meta: {
+      auth: {
+        roles: ['paciente'],
+        redirect: {
+          name: 'login'
+        },
+        forbiddenRedirect: '/403'
+      }
+    }
   },
   {
     path: '/cadastro/orgao',

@@ -10,14 +10,16 @@
         </card>
       </div>
       <div class="col-md-8">
-        <card class="card">
+        <card class="card text-center text-psi">
             <p>Você atendeu</p>
             <h1>3 vezes esse mês</h1>
         </card>
-        <card class="px-4">
-          <h1 class="text-center text-psi" style="margin-bottom: 4rem">Seja um Herói Ouro!</h1>
+        <br>
+        <card class="card text-center text-psi">
+          <h1>Seja um Herói Ouro!</h1>
         </card>
-        <table class=".table-borderless">
+        <br>
+        <table class="table table-borderless">
           <tr>
             <th class="tg-baqh" colspan="4">Agendamentos pendentes de confirmação</th>
           </tr>
@@ -83,5 +85,10 @@ export default {
       font-weight: bold;
     }
   }
+
+  .table {
+   margin: auto;
+   width: 50% !important;
+}
 
 </style>
