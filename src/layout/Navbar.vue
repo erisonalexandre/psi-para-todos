@@ -2,7 +2,7 @@
   <b-navbar toggleable="lg" type="dark" variant="info" class="navbar-psi" id="navbar-default">
     <div class="container">
 
-      <router-link to="/" class="navbar-brand"><img :src="require('../assets/logo.svg')" class="img-fluid" style="max-height: 55px" alt=""></router-link>
+      <router-link to="/" class="navbar-brand"><img :src="require('../assets/logo.svg')" class="img-fluid my-0" style="max-height: 55px" alt=""></router-link>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

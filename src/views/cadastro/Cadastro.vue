@@ -30,8 +30,11 @@
 </template>
 
 <script>
+import animarInputs from '../../mixins/animarInputs'
+
 export default {
   name: 'Cadastro',
+  mixins: [animarInputs],
   data () {
     return {
       imagensVisiveis: true
