@@ -16,7 +16,7 @@ Vue.use(IconsPlugin)
 
 Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false
 
-Vue.config.productionTip = false
+Vue.config.productionTip = process.env.VUE_APP_PRODUCTION_TIP
 
 new Vue({
   router,
