@@ -31,7 +31,7 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: Login
   },
   {
@@ -53,6 +53,15 @@ const routes = [
     path: '/cadastro/profissional',
     name: 'CadastroProfissional',
     component: CadastroProfissional
+    // meta: {
+    //   auth: {
+    //     roles: ['paciente'],
+    //     redirect: {
+    //       name: 'login'
+    //     },
+    //     forbiddenRedirect: '/403'
+    //   }
+    // }
   },
   {
     path: '/cadastro/orgao',
