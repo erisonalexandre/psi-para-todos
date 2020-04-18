@@ -1,5 +1,8 @@
 <template>
   <div class="card">
+    <div class="card-header" v-if="this.$slots['header']">
+      <slot name="header"></slot>
+    </div>
     <div class="card-body" v-if="this.$slots.default">
       <slot name="default"></slot>
     </div>
