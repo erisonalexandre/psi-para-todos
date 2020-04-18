@@ -2,15 +2,14 @@
   <b-navbar toggleable="lg" type="dark" variant="info" class="navbar-psi" id="navbar-default">
     <div class="container">
 
-      <router-link to="/" class="navbar-brand"><img :src="require('../assets/logo.svg')" class="img-fluid" style="max-height: 55px" alt=""></router-link>
+      <router-link to="/" class="navbar-brand"><img :src="require('../assets/logo.svg')" class="img-fluid my-0" style="max-height: 55px" alt=""></router-link>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" class="ml-md-4" is-nav>
         <b-navbar-nav>
-          <router-link to="/" class="nav-link">Sobre nós</router-link>
-          <router-link to="/about" class="nav-link">Serviços</router-link>
-          <router-link to="/about" class="nav-link">Tabalhe conosco</router-link>
+          <router-link :to="{name: 'SobreNos'}" class="nav-link">Sobre nós</router-link>
+          <router-link :to="{name: 'Profissional'}" class="nav-link">Profissional</router-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -51,8 +50,12 @@ export default {
 .navbar-psi {
   background: linear-gradient(90deg, #43C7FF 0%, #44A9FF 64.99%, #4584FF 102.13%);
 }
-.nav-link {
+
+#navbar-default.navbar-dark .navbar-nav .nav-link {
   color: #fff;
+}
+#navbar-default.navbar-dark .navbar-nav .nav-link:hover {
+  color: #e4e4e4;
 }
 #navbar-default {
   max-height: 81px;

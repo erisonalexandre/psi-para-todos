@@ -36,6 +36,10 @@ html, body {
 h1 {
   color: #4585FF;
 }
+h2 {
+	font-size: 24px;
+	color: #6E6E6E;
+}
 
 button.psi-btn {
   width: 239px;
@@ -65,5 +69,19 @@ button.psi-btn {
     font-weight: bold;
     font-size: 20px;
   }
+}
+.altura-100-centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: calc(100% - 81px);
+  padding: 20px 0;
+}
 
+.card-header {
+  background: linear-gradient(90deg, #43C7FF 0%, #44A9FF 64.99%, #4584FF 102.13%);
+  color: #fff;
+  margin: -15px -15px 0 -15px;
 }

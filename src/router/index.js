@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import SobreNos from '../views/SobreNos.vue'
+import Profissional from '../views/Profissional.vue'
 import Login from '../views/Login.vue'
 import Esqueci from '../views/Esqueci.vue'
-import Cadastro from '../views/Cadastro.vue'
-import CadPaciente from '../views/CadPaciente.vue'
-import CadProfissional from '../views/CadProfissional.vue'
-import CadOrgao from '../views/CadOrgao.vue'
+import Cadastro from '../views/cadastro/Cadastro.vue'
+import CadastroPaciente from '../views/cadastro/CadastroPaciente.vue'
+import CadastroProfissional from '../views/cadastro/CadastroProfissional.vue'
+import CadastroOrgao from '../views/cadastro/CadastroOrgao.vue'
 
 Vue.use(VueRouter)
 
@@ -17,8 +19,18 @@ const routes = [
     component: Home
   },
   {
+    path: '/sobrenos',
+    name: 'SobreNos',
+    component: SobreNos
+  },
+  {
+    path: '/profissional',
+    name: 'Profissional',
+    component: Profissional
+  },
+  {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: Login
   },
   {
@@ -32,19 +44,28 @@ const routes = [
     component: Cadastro
   },
   {
-    path: '/cadpaciente',
-    name: 'CadPaciente',
-    component: CadPaciente
+    path: '/cadastro/paciente',
+    name: 'CadastroPaciente',
+    component: CadastroPaciente
   },
   {
-    path: '/cadprofissional',
-    name: 'CadProfissional',
-    component: CadProfissional
+    path: '/cadastro/profissional',
+    name: 'CadastroProfissional',
+    component: CadastroProfissional
+    // meta: {
+    //   auth: {
+    //     roles: ['paciente'],
+    //     redirect: {
+    //       name: 'login'
+    //     },
+    //     forbiddenRedirect: '/403'
+    //   }
+    // }
   },
   {
-    path: '/cadorgao',
-    name: 'CadOrgao',
-    component: CadOrgao
+    path: '/cadastro/orgao',
+    name: 'CadastroOrgao',
+    component: CadastroOrgao
   }
 
 ]

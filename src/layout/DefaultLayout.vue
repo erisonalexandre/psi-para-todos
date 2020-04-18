@@ -9,33 +9,21 @@
 <script>
 import Navbar from './Navbar'
 import Footer from './Footer'
+import animarInputs from '../mixins/animarInputs'
 export default {
   name: 'DefaultLayout',
+  mixins: [animarInputs],
   components: {
     'psi-footer': Footer,
     Navbar
   },
   mounted () {
-    // animação dos inputs
-    const blurInput = function () {
-      var inputValue = $(this).val()
-      if (inputValue === '') {
-        $(this).removeClass('filled')
-        $(this).parents('.form-group').removeClass('focused')
-      } else {
-        $(this).addClass('filled')
+    if (localStorage.getItem('jwt-auth')) {
+      const user = JSON.parse(localStorage.getItem('user'))
+      if (user) {
+        this.$auth.user(user)
       }
     }
-
-    const focusInput = function () {
-      $(this).parents('.form-group').addClass('focused')
-    }
-
-    $('select').focus(focusInput).blur(blurInput)
-
-    $('input').focus(focusInput).blur(blurInput())
-
-    $('textarea').focus(focusInput).blur(blurInput())
   }
 }
 </script>

@@ -1,6 +1,7 @@
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import Vue from 'vue'
+// import axios from 'axios'
 
 window._ = require('lodash')
 
@@ -13,10 +14,18 @@ try {
   console.error(e)
 }
 
-window.axios = require('axios')
-
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-
+// window.axios = axios.create({
+//   baseURL: 'http://localhost:3333',
+//   withCredentials: false,
+//   headers: {
+//     'Content-Type': 'application/json',
+//     Authorization: 'Bearer ' + localStorage.token,
+//     'Access-Control-Allow-Origin': '*',
+//     Accept: 'application/json, text/plain, */*',
+//     'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+//     'Access-Control-Allow-Credentials': true
+//   }
+// })
 const requireComponent = require.context(
   // O caminho relativo da pasta de componentes
   './components/globais',

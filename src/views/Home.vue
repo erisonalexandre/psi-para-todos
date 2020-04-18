@@ -9,7 +9,7 @@
             <div class="d-md-none mb-4">
               <img :src="require('../assets/part1.svg')" class="img-fluid">
             </div>
-            <button>SAIBA MAIS</button>
+            <a href="#sobre" class="button-home"><button>SAIBA MAIS</button></a>
           </div>
         </div>
         <div class="col d-none d-md-flex justify-content-center align-items-center p-5" style="box-sizing: border-box">
@@ -17,7 +17,7 @@
         </div>
       </div>
     </section>
-    <section class="parttwo" style="background:#E2ECFF">
+    <section class="parttwo" style="background:#E2ECFF" id="sobre">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-4 d-none d-md-block">
@@ -28,7 +28,7 @@
             <h2>Uma solução que une a população e psicólogos facilitando a conexão e agendamento de serviços psicológicos
               gratuito, de maneira simples, humana e segura, com apenas um clique!</h2>
             <div class="d-flex justify-content-center">
-              <button>CADASTRAR</button>
+              <router-link :to="{name: 'Cadastro'}" tag="button">CADASTRAR</router-link>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
         </div>
       </div>
     </section>
-    <section class="container">
+    <section class="container" id="voce-profissional">
       <div class="partfour row">
         <div class="col">
           <h1>Você é profissional?</h1>
@@ -59,7 +59,7 @@
               <img :src="require('../assets/jarrodeflor.svg')">
             </div>
           </div>
-          <button>QUERO PARTICIPAR</button>
+          <router-link :to="{name: 'CadastroPofissional'}" tag="button">QUERO PARTICIPAR</router-link>
         </div>
       </div>
     </section>
@@ -71,13 +71,19 @@ export default {
   name: 'Home',
   mounted () {
     var handleHomeContentHeight = function () {
-      $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', $('#conteudo-primeiro').height())
+      var altura = $('#conteudo-primeiro').height()
+      var alturaMinima = window.innerWidth > 991 ? 488 : window.innerWidth > 767 ? 356 : 300
+      altura = altura < 350 ? alturaMinima : altura
+      $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', altura)
 
       $(window).on('resize', function () {
-        $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', $('#conteudo-primeiro').height())
+        var altura = $('#conteudo-primeiro').height()
+        var alturaMinima = window.innerWidth > 991 ? 488 : window.innerWidth > 767 ? 356 : 300
+        altura = altura < 350 ? alturaMinima : altura
+        $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', altura)
       })
     }
-    document.onload(() => {
+    $(window).on('load', function () {
       handleHomeContentHeight()
     })
   }
@@ -85,38 +91,38 @@ export default {
 </script>
 
 <style lang="scss">
-  @media (max-width: 767.98px) {
-    h1 {
-      font-size: 26px !important;
+  .home {
+    @media (max-width: 767.98px) {
+      h1 {
+        font-size: 26px !important;
+      }
+      .parttwo {
+        padding-top: 20px !important;
+        padding-bottom: 15px;
+      }
     }
-    .parttwo {
-      padding-top: 20px !important;
-      padding-bottom: 15px;
-    }
-  }
-  @media (max-width: 991.98px) {
-    #primeiro {
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-    .parttwo {
-      div{
-        h1 {
-          font-size: 40px !important;
-          text-align: center;
-        }
-        h2 {
-          text-align: center !important;
+    @media (max-width: 991.98px) {
+      #primeiro {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .parttwo {
+        div{
+          h1 {
+            font-size: 40px !important;
+            text-align: center;
+          }
+          h2 {
+            text-align: center !important;
+          }
         }
       }
     }
-  }
-  @media (min-width: 768px) {
-    .parttwo {
-      min-height: 559px;
+    @media (min-width: 768px) {
+      .parttwo {
+        min-height: 559px;
+      }
     }
-  }
-  .home {
     button {
       width: 225px;
       height: 45px;
@@ -127,85 +133,85 @@ export default {
       padding-top: 0;
       font-size: 20px;
     }
-  }
-  .partone {
-    height: 100%;
-    div {
-      h1 {
-        font-size: 35px;
-        font-weight: bold;
+    .partone {
+      height: 100%;
+      div {
+        h1 {
+          font-size: 35px;
+          font-weight: bold;
+        }
+
+        h2 {
+          margin-top: 30px;
+          margin-bottom: 20px;
+          font-size: 25px;
+          color: #6E6E6E;
+        }
+
+        img {
+          max-height: 480px;
+        }
+      }
+    }
+
+    .parttwo {
+      min-height: 365px;
+      background-color: #E2ECFF;
+      padding-top: 80px;
+      padding-left: 30px;
+      padding-right: 30px;
+      text-align: right;
+      align-items: center;
+      display: flex;
+      div {
+
+        h1 {
+          font-size: 35px;
+          font-weight: bold;
+        }
+
+        h2 {
+          font-size: 18px;
+          color: #6E6E6E;
+          margin-bottom: 30px;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .partthree {
+      padding-top: 10px;
+      height: 240px;
+      background-color: #458AFF;
+      text-align: center;
+
+      div {
+        h1 {
+          color: #FFFFFF;
+          margin-top: 20px;
+          margin-bottom: 50px;
+          font-weight: bold;
+        }
       }
 
-      h2 {
+    }
+
+    .partfour {
+      text-align: center;
+      min-height: 405px;
+
+      h1 {
         margin-top: 30px;
-        margin-bottom: 20px;
-        font-size: 25px;
-        color: #6E6E6E;
-      }
-
-      img {
-        max-height: 480px;
-      }
-    }
-  }
-
-  .parttwo {
-    min-height: 365px;
-    background-color: #E2ECFF;
-    padding-top: 80px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: right;
-    align-items: center;
-    display: flex;
-    div {
-
-      h1 {
-        font-size: 35px;
-        font-weight: bold;
-      }
-
-      h2 {
-        font-size: 18px;
-        color: #6E6E6E;
         margin-bottom: 30px;
-        line-height: 1.5;
       }
-    }
-  }
 
-  .partthree {
-    padding-top: 10px;
-    height: 240px;
-    background-color: #458AFF;
-    text-align: center;
-
-    div {
-      h1 {
-        color: #FFFFFF;
-        margin-top: 20px;
-        margin-bottom: 50px;
-        font-weight: bold;
-      }
-    }
-
-  }
-
-  .partfour {
-    text-align: center;
-    min-height: 405px;
-
-    h1 {
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-
-    div {
-      h2 {
-        margin-left: 30px;
-        font-size: 24px;
-        color: #6E6E6E;
-        text-align: left;
+      div {
+        h2 {
+          margin-left: 30px;
+          font-size: 24px;
+          color: #6E6E6E;
+          text-align: left;
+        }
       }
     }
   }
