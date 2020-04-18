@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from './store'
 import auth from './auth'
 import router from './router/index'
+import toastMixin from './mixins/toastMixin'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -10,7 +11,9 @@ import VueRouter from 'vue-router'
 import Popper from 'popper.js'
 import VueAuth from '@websanova/vue-auth'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import VueIziToast from 'vue-izitoast'
 
+import 'izitoast/dist/css/iziToast.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import './sass/style.scss'
 
@@ -18,6 +21,7 @@ require('./bootstrap')
 
 Vue.router = router
 
+Vue.use(VueIziToast)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueAxios, axios.create({
@@ -39,6 +43,7 @@ Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false
 Vue.config.productionTip = process.env.VUE_APP_PRODUCTION_TIP
 
 new Vue({
+  mixins: [toastMixin],
   router,
   store,
   render: h => h(App)
