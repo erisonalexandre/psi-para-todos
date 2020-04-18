@@ -71,11 +71,15 @@ export default {
   name: 'Home',
   mounted () {
     var handleHomeContentHeight = function () {
-      $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', $('#conteudo-primeiro').height())
+      var altura = $('#conteudo-primeiro').height()
+      var alturaMinima = window.innerWidth > 991 ? 488 : window.innerWidth > 767 ? 356 : 300
+      altura = altura < 350 ? alturaMinima : altura
+      $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', altura)
 
       $(window).on('resize', function () {
         var altura = $('#conteudo-primeiro').height()
-        altura = altura < 250 ? 250 : altura
+        var alturaMinima = window.innerWidth > 991 ? 488 : window.innerWidth > 767 ? 356 : 300
+        altura = altura < 350 ? alturaMinima : altura
         $('#primeiro').height($(window).height() - $('#navbar-default').height()).css('min-height', altura)
       })
     }
