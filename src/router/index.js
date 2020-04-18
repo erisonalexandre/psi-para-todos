@@ -9,6 +9,7 @@ import Cadastro from '../views/cadastro/Cadastro.vue'
 import CadastroPaciente from '../views/cadastro/CadastroPaciente.vue'
 import CadastroProfissional from '../views/cadastro/CadastroProfissional.vue'
 import CadastroOrgao from '../views/cadastro/CadastroOrgao.vue'
+import DashboardProfissional from '../views/DashboardProfissional.vue'
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/cadastro/orgao',
     name: 'CadastroOrgao',
     component: CadastroOrgao
+  },
+  {
+    path: '/dashboard/profissional',
+    name: 'DashboardProfissional',
+    component: DashboardProfissional
   }
 
 ]
