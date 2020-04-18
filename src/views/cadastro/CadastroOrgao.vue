@@ -101,7 +101,7 @@ export default {
             this.$auth.user(data.user)
             localStorage.setItem('user', JSON.stringify(data.user))
             this.$toast.success('Bem vindo!', `Sucesso ${data.user.nome}`, this.$root.toastConfig.success)
-            this.$router.replace({ path: 'dashboard/' + data.user.perfil })
+            this.$router.replace({ path: '/dashboard/' + data.user.perfil })
           },
           error: function (error) {
             console.error(error)

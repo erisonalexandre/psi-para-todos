@@ -8,14 +8,31 @@
 
       <b-collapse id="nav-collapse" class="ml-md-4" is-nav>
         <b-navbar-nav>
-          <router-link :to="{name: 'SobreNos'}" class="nav-link">Sobre nós</router-link>
-          <router-link :to="{name: 'Profissional'}" class="nav-link">Profissional</router-link>
+          <router-link v-if="!$auth.check()" :to="{name: 'SobreNos'}" class="nav-link">Sobre nós</router-link>
+          <router-link v-if="!$auth.check()" :to="{name: 'Profissional'}" class="nav-link">Profissional</router-link>
+          <router-link v-if="$auth.check('profissional')" :to="{name: 'DashboardProfissional'}" class="nav-link">Dashboard</router-link>
+          <router-link v-if="$auth.check('paciente')" :to="{name: 'DashboardPaciente'}" class="nav-link">Dashboard</router-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto" id="btn-navbar">
-          <router-link to="/login" tag="button" class="btn btn-primary mr-md-2">Login</router-link>
-          <router-link to="/cadastro" tag="button" class="btn btn-primary">Cadastro</router-link>
+          <router-link v-if="!$auth.check()" to="/login" tag="button" class="btn btn-primary mr-2">Login</router-link>
+          <router-link v-if="!$auth.check()" to="/cadastro" tag="button" class="btn btn-primary">Cadastro</router-link>
+          <b-nav-item-dropdown right no-caret v-if="$auth.check()">
+            <!-- Using 'button-content' slot -->
+            <template v-slot:button-content>
+              <div class="d-flex">
+                <div class="mr-md-2 pt-1">
+                  <div class="text-right">
+                    Óla
+                  </div>
+                  {{$auth.user().nome | firstName | upperFirst}}
+                </div>
+                <img :src="require('../assets/profile.png')" style="height: 55px; width: 55px" class="rounded-circle m-0 img-fluid" alt="avatar image">
+              </div>
+            </template>
+            <b-dropdown-item href="#" @click="logout">Sair</b-dropdown-item>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </div>
@@ -24,7 +41,20 @@
 
 <script>
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  methods: {
+    logout () {
+      this.$auth.logout()
+    }
+  },
+  filters: {
+    firstName (value) {
+      return value.split(' ')[0]
+    },
+    upperFirst (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1)
+    }
+  }
 }
 </script>
 
