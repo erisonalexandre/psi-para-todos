@@ -2,11 +2,11 @@
   <div class="login">
     <div class="row">
       <div class="col-md-4">
+
+          <img :src="require('../assets/Agendamentos.svg')" class="img-fluid" width="500px" >
+
         <card class="px-4">
-          <h1 class="text-center text-psi" style="margin-bottom: 4rem">Seus Atendimentos</h1>
-        </card>
-        <card class="px-4">
-            <h1 class="text-center text-psi" style="margin-bottom: 4rem">Atendimentos</h1>
+            <h1 class="text-center text-psi">Atendimentos</h1>
         </card>
       </div>
       <div class="col-md-8">
@@ -86,9 +86,9 @@ export default {
     }
   }
 
-  .table {
-   margin: auto;
-   width: 50% !important;
+ th {
+  background: linear-gradient(90deg, #43C7FF 0%, #44A9FF 64.99%, #4584FF 102.13%);
+  border-radius: 20px 20px 0px 0px;
 }
 
 </style>
