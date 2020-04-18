@@ -1,15 +1,14 @@
 <template>
-  <div class="login">
+  <div class="altura-100-centro">
     <div class="row">
       <div class="col-md-4">
-
           <img :src="require('../assets/Agendamentos.svg')" class="img-fluid" width="500px" >
-
         <card class="px-4">
             <h1 class="text-center text-psi">Atendimentos</h1>
         </card>
       </div>
       <div class="col-md-8">
+      <br>
         <card class="card text-center text-psi">
             <p>Você atendeu</p>
             <h1>3 vezes esse mês</h1>
