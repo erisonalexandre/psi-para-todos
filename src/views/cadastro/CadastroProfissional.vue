@@ -85,7 +85,8 @@ export default {
         data_nascimento: null,
         password: null,
         telefone: null,
-        email: null
+        email: null,
+        crp: null
       }
     }
   },
@@ -97,8 +98,22 @@ export default {
     },
     submit () {
       // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
-      this.$http.post('/profissionals', this.form).then((response) => {
-        console.log(response)
+      this.$http.post('/professionals', this.form).then((response) => {
+        this.$auth.login({
+          data: this.form,
+          success: function ({ data }) {
+            this.$auth.token('jwt-auth', data.token)
+            this.$auth.user(data.user)
+            localStorage.setItem('user', JSON.stringify(data.user))
+            this.$toast.success('Bem vindo!', `Sucesso ${data.user.nome}`, this.$root.toastConfig.success)
+            this.$router.replace({ path: '/dashboard/' + data.user.perfil })
+          },
+          error: function (error) {
+            console.error(error)
+          },
+          rememberMe: true,
+          fetchUser: false
+        })
       })
     }
   }
