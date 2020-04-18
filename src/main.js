@@ -21,7 +21,7 @@ Vue.router = router
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueAxios, axios.create({
-  baseURL: 'http://localhost:3333'
+  baseURL: process.env.VUE_APP_BACKEND_ROUTE
   // withCredentials: false,
   // headers: {
   //   'Content-Type': 'application/json',
