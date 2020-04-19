@@ -8,17 +8,34 @@
 
       <b-collapse id="nav-collapse" class="ml-md-4" is-nav>
         <b-navbar-nav>
-          <a href="#voce-profissional" class="nav-link">Profissional</a>
-          <a href="#rank" class="nav-link">Rank dos Heróis</a>
-          <a href="#instituicao" class="nav-link">Instituições</a>
-          <a href="#dicas" class="nav-link">Dicas</a>
-          <a href="#sobre" class="nav-link">Sobre nós</a>
+          <router-link v-if="$auth.check('profissional')" :to="{name: 'DashboardProfissional'}" class="nav-link">Dashboard</router-link>
+          <router-link v-if="$auth.check('paciente')" :to="{name: 'DashboardPaciente'}" class="nav-link">Dashboard</router-link>
+          <a href="/#voce-profissional" class="nav-link">Profissional</a>
+          <a href="/#rank" class="nav-link">Rank dos Heróis</a>
+          <router-link :to="{name: 'Instituicoes'}" class="nav-link">Instituições</router-link>
+          <router-link :to="{name: 'SaudeMental'}" class="nav-link">Saúde mental</router-link>
+          <router-link :to="{name: 'OQueE'}" class="nav-link">Sobre nós</router-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto" id="btn-navbar">
-          <router-link to="/login" tag="button" class="btn btn-primary mr-md-2">Login</router-link>
-          <router-link to="/cadastro" tag="button" class="btn btn-primary">Cadastro</router-link>
+          <router-link v-if="!$auth.check()" to="/login" tag="button" class="btn btn-primary mr-lg-2 btn-login">Login</router-link>
+          <router-link v-if="!$auth.check()" to="/cadastro" tag="button" class="btn btn-primary">Cadastro</router-link>
+          <b-nav-item-dropdown right no-caret v-if="$auth.check()">
+            <!-- Using 'button-content' slot -->
+            <template v-slot:button-content>
+              <div class="d-flex">
+                <div class="mr-md-2 pt-1">
+                  <div class="text-right">
+                    Óla
+                  </div>
+                  {{$auth.user().nome | firstName | upperFirst}}
+                </div>
+                <img :src="require('../assets/profile.png')" style="height: 55px; width: 55px" class="rounded-circle m-0 img-fluid" alt="avatar image">
+              </div>
+            </template>
+            <b-dropdown-item href="#" @click="logout">Sair</b-dropdown-item>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </div>
@@ -27,7 +44,20 @@
 
 <script>
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  methods: {
+    logout () {
+      this.$auth.logout()
+    }
+  },
+  filters: {
+    firstName (value) {
+      return value.split(' ')[0]
+    },
+    upperFirst (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1)
+    }
+  }
 }
 </script>
 
@@ -48,6 +78,20 @@ export default {
   }
   #btn-navbar {
     align-items: center;
+    .btn:first-child {
+      background-color: #458AFF;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #btn-navbar {
+    .btn:first-child {
+      background-color: #fff;
+      color: #458AFF;
+    }
   }
 }
 .navbar-psi {
@@ -72,10 +116,6 @@ export default {
     padding-top: 0;
     padding-bottom: 0;
     border: none;
-  }
-  .btn:first-child {
-    background-color: #fff;
-    color: #458AFF;
   }
   .btn:last-child {
     background-color: #FD3C65;

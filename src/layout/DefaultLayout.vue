@@ -16,6 +16,15 @@ export default {
   components: {
     'psi-footer': Footer,
     Navbar
+  },
+  created () {
+    if (localStorage.getItem('jwt-auth')) {
+      const user = JSON.parse(localStorage.getItem('user'))
+      if (user) {
+        this.$auth.user(user)
+      }
+    }
+    console.log(this.$auth.user())
   }
 }
 </script>

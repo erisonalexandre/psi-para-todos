@@ -2,28 +2,34 @@
   <div class="container altura-100-centro" id="cadastro">
     <div class="row">
       <div class="col-md-4">
-        <card>
-          <img class="img-fluid" v-if="imagensVisiveis" :src="require('../../assets/paciente.svg')">
-          <template slot="footer">
-            <router-link :to="{name: 'CadastroPaciente'}">Paciente</router-link>
-          </template>
-        </card>
+        <router-link :to="{name: 'CadastroPaciente'}">
+          <card>
+            <img class="img-fluid" v-if="imagensVisiveis" :src="require('../../assets/paciente.svg')">
+            <template slot="footer">
+              Paciente
+            </template>
+          </card>
+        </router-link>
       </div>
       <div class="col-md-4">
-        <card>
-          <img class="img-fluid" v-if="imagensVisiveis" :src="require('../../assets/profissional.svg')">
-          <template slot="footer">
-            <router-link :to="{name: 'CadastroProfissional'}">Profissional</router-link>
-          </template>
-        </card>
+        <router-link :to="{name: 'CadastroProfissional'}">
+          <card>
+            <img class="img-fluid" v-if="imagensVisiveis" :src="require('../../assets/profissional.svg')">
+            <template slot="footer">
+              Profissional
+            </template>
+          </card>
+        </router-link>
       </div>
       <div class="col-md-4">
-        <card>
-          <img class="img-fluid" v-if="imagensVisiveis" :src="require('../../assets/orgao.svg')">
-          <template slot="footer">
-            <router-link :to="{name: 'CadastroOrgao'}">Instituição</router-link>
-          </template>
-        </card>
+        <router-link :to="{name: 'CadastroOrgao'}">
+          <card>
+            <img class="img-fluid" v-if="imagensVisiveis" :src="require('../../assets/orgao.svg')">
+            <template slot="footer">
+              Orgão
+            </template>
+          </card>
+        </router-link>
       </div>
     </div>
   </div>

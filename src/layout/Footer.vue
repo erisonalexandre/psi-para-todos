@@ -2,14 +2,14 @@
   <footer class="rodape">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-4">
+        <div class="col-md-4">
           <p>Desenvolvido por Krakatoa Team</p>
         </div>
-        <div class="col-5">
+        <div class="col-md-5">
           <p>E-mail: atendimentopsiparatodos@gmail.com
           </p>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <p>
             Siga-nos em nossa rede: Instagram:@psiparatodos_
           </p>
@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss">
 .rodape{
-    height: 69px;
+    min-height: 69px;
     background-color: #458AFF;
     padding-left: 30px;
     padding-top: 10px;
