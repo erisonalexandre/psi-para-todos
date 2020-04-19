@@ -6,7 +6,7 @@
           <p>Desenvolvido por Krakatoa Team</p>
         </div>
         <div class="col-md-5">
-          <p>E-mail: atendimentopsiparatodos@gmail.com
+          <p>E-mail: contatopsiparatodos@gmail.com
           </p>
         </div>
         <div class="col-md-3">

@@ -21,7 +21,7 @@
         <h1>E quais ações preventivas devo tomar?</h1>
         <div class="container">
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/mantenhase.svg')">
             </div>
             <div class="col-10"><span class="destaque">Mantenha-se descansado!</span> O sono é essencial para a
@@ -29,15 +29,15 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/pratique.svg')">
             </div>
-            <div class="col-10"><span class="destaque">Pratique exercícios físicos!</span> Além de outros benefícios,
+            <div class="col-md-10"><span class="destaque">Pratique exercícios físicos!</span> Além de outros benefícios,
               eles ajudam na liberação de neurotransmissores naturais do corpo, associados ao bem-estar.
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/rotina.svg')">
             </div>
             <div class="col-10"><span class="destaque">Crie uma rotina</span>, de forma que você se mantenha ativo e
@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/ociosidade.svg')">
             </div>
             <div class="col-10"><span class="destaque">Evite a ociosidade.</span> A mente vazia pode trazer à tona
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/fake.svg')">
             </div>
             <div class="col-10"><span class="destaque">Não caia em fake news!</span> Reduza a leitura ou o contato com
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/empatia.svg')">
             </div>
             <div class="col-10"><span class="destaque">Tenha empatia.</span> Busque, na medida do possível, apoiar os
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/cuidedevoce.svg')">
             </div>
             <div class="col-10"><span class="destaque">Cuide de você!</span> Durante seu trabalho em casa, procure beber
@@ -81,7 +81,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/mantenhacontato.svg')">
             </div>
             <div class="col-10"><span class="destaque">Mantenha contato</span> com seus familiares, amigos, namorada(o)
@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
               <img :src="require('../../assets/incentive.svg')">
             </div>
             <div class="col-10"><span class="destaque">Incentive boas ações!</span> Manifeste seu apoio aos
@@ -124,7 +124,7 @@
           de estudos científicos que são doenças, e possuem tratamento!</h2>
         <h2>A <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div> possui profissionais cadastrados, de diversos órgãos e projetos, qualificados para atender
           as mais diversas demandas! Cadastre-se e agende sua consulta
-          <router-link :to="{name:'Cadastro'}">clicando aqui</router-link>
+          <router-link :to="{name:'CadastroPaciente'}">clicando aqui</router-link>
           .
         </h2>
         <h2>Vamos juntos fazer a nossa parte e cuidar da saúde física e mental, contribuindo com a

@@ -27,7 +27,7 @@
               <div class="d-flex">
                 <div class="mr-md-2 pt-1">
                   <div class="text-right">
-                    Óla
+                    Olá
                   </div>
                   {{$auth.user().nome | firstName | upperFirst}}
                 </div>

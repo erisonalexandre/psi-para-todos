@@ -63,7 +63,7 @@
               <h2>O profissional será avaliado por atendimento e sua pontuação integrará uma lista de “heróis”.
               </h2>
               <div class="justify-content-center d-flex">
-                <router-link :to="{name: 'CadastroPofissional'}" class="mt-4" tag="button">QUERO PARTICIPAR</router-link>
+                <router-link :to="{name: 'CadastroProfissional'}" class="mt-4" tag="button">QUERO PARTICIPAR</router-link>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@
             <h1>Rank de Heróis</h1>
             <div class="container">
               <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                   <card class="px-3">
                     <div class="container">
                       <div class="row rank-usuario">
@@ -162,7 +162,7 @@
             </div>
             <div class="col-md-8 text-justify">
               <h1>Instituições</h1>
-              <h2 class="my-4">Na plataforma a instituição podem realizar seu cadastro e cadastrar seus colaboradores, permitindo ainda, a visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
+              <h2 class="my-4">Na plataforma a instituição pode realizar seu cadastro e cadastrar seus colaboradores, permitindo ainda, a visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
               </h2>
               <router-link :to="{name: 'CadastroOrgao'}" tag="button">SEJA UM PARCEIRO</router-link>
             </div>
@@ -450,7 +450,6 @@ export default {
 
       div {
         h2 {
-          margin-left: 30px;
           font-size: 24px;
           color: #6E6E6E;
           text-align: justify;
