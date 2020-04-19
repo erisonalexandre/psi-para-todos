@@ -4,7 +4,7 @@
         <h1 class="text-center text-psi" style="margin-bottom: 4rem">Login</h1>
         <form @submit.prevent="submit">
           <div class="form-group mb-4">
-            <label for="username" class="form-label">Nome</label>
+            <label for="username" class="form-label">Email</label>
             <input type="text" class="form-control" v-model="form.email" id="username">
           </div>
           <div class="form-group">
