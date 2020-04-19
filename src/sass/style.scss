@@ -79,3 +79,26 @@ button.psi-btn {
   min-height: calc(100% - 81px);
   padding: 20px 0;
 }
+/*fontes para o titulo todos*/
+@font-face{
+	font-family: historicSeattle;
+	src: url('font/Historic_Seattle_PersonaUseOnly.ttf');
+}
+.nomedosite{
+	display: inline;
+	word-spacing: 1px;
+	text-align: left;
+	.psipara{
+		color: #FFFFFF;
+		font-weight: bold;
+		text-shadow: 0px 2px 5px #000;
+		font-size: 20px;
+		text-transform: uppercase;
+	}
+	.todos{
+		font-family: historicSeattle;
+		color: #fd3c65;
+		font-size: 35px;
+		text-transform: lowercase;
+	}
+}

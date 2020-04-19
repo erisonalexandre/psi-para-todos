@@ -8,8 +8,11 @@
 
       <b-collapse id="nav-collapse" class="ml-md-4" is-nav>
         <b-navbar-nav>
-          <router-link :to="{name: 'SobreNos'}" class="nav-link">Sobre nós</router-link>
-          <router-link :to="{name: 'Profissional'}" class="nav-link">Profissional</router-link>
+          <a href="#voce-profissional" class="nav-link">Profissional</a>
+          <a href="#rank" class="nav-link">Rank dos Heróis</a>
+          <a href="#instituicao" class="nav-link">Instituições</a>
+          <a href="#dicas" class="nav-link">Dicas</a>
+          <a href="#sobre" class="nav-link">Sobre nós</a>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import SobreNos from '../views/SobreNos.vue'
 import Profissional from '../views/Profissional.vue'
 import Login from '../views/Login.vue'
 import Esqueci from '../views/Esqueci.vue'
@@ -17,11 +16,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/sobrenos',
-    name: 'SobreNos',
-    component: SobreNos
   },
   {
     path: '/profissional',
