@@ -13,7 +13,7 @@ import VueAuth from '@websanova/vue-auth'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueIziToast from 'vue-izitoast'
 
-import 'izitoast/dist/css/iziToast.css'
+import 'izitoast/dist/css/iziToast.min.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import './sass/style.scss'
 
