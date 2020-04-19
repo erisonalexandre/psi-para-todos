@@ -10,6 +10,7 @@
         <b-navbar-nav>
           <router-link v-if="$auth.check('profissional')" :to="{name: 'DashboardProfissional'}" class="nav-link">Dashboard</router-link>
           <router-link v-if="$auth.check('paciente')" :to="{name: 'DashboardPaciente'}" class="nav-link">Dashboard</router-link>
+          <router-link v-if="$auth.check('organizacao')" :to="{name: 'DashboardOrgao'}" class="nav-link">Dashboard</router-link>
           <a href="/#voce-profissional" class="nav-link">Profissional</a>
           <a href="/#rank" class="nav-link">Rank dos Heróis</a>
           <router-link :to="{name: 'Instituicoes'}" class="nav-link">Instituições</router-link>

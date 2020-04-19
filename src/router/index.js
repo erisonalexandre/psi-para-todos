@@ -10,6 +10,7 @@ import CadastroProfissional from '../views/cadastro/CadastroProfissional.vue'
 import CadastroOrgao from '../views/cadastro/CadastroOrgao.vue'
 import DashboardPaciente from '../views/DashboardPaciente.vue'
 import DashboardProfissional from '../views/DashboardProfissional.vue'
+import DashboardOrgao from '../views/DashboardOrgao.vue'
 import OQueE from '../views/publico/OQueE'
 import Instituicao from '../views/publico/Instituicao'
 import SaudeMental from '../views/publico/SaudeMental'
@@ -86,6 +87,20 @@ const routes = [
     meta: {
       auth: {
         roles: ['paciente'],
+        redirect: {
+          name: 'login'
+        },
+        forbiddenRedirect: '/403'
+      }
+    }
+  },
+  {
+    path: '/dashboard/instituto',
+    name: 'DashboardOrgao',
+    component: DashboardOrgao,
+    meta: {
+      auth: {
+        roles: ['organizacao'],
         redirect: {
           name: 'login'
         },
