@@ -8,15 +8,13 @@
 
       <b-collapse id="nav-collapse" class="ml-md-4" is-nav>
         <b-navbar-nav>
-          <router-link v-if="!$auth.check()" :to="{name: 'SobreNos'}" class="nav-link">Sobre nós</router-link>
-          <router-link v-if="!$auth.check()" :to="{name: 'Profissional'}" class="nav-link">Profissional</router-link>
           <router-link v-if="$auth.check('profissional')" :to="{name: 'DashboardProfissional'}" class="nav-link">Dashboard</router-link>
           <router-link v-if="$auth.check('paciente')" :to="{name: 'DashboardPaciente'}" class="nav-link">Dashboard</router-link>
-          <a href="#voce-profissional" class="nav-link">Profissional</a>
-          <a href="#rank" class="nav-link">Rank dos Heróis</a>
-          <a href="#instituicao" class="nav-link">Instituições</a>
-          <a href="#dicas" class="nav-link">Dicas</a>
-          <a href="#sobre" class="nav-link">Sobre nós</a>
+          <a href="/#voce-profissional" class="nav-link">Profissional</a>
+          <a href="/#rank" class="nav-link">Rank dos Heróis</a>
+          <router-link :to="{name: 'Instituicoes'}" class="nav-link">Instituições</router-link>
+          <router-link :to="{name: 'SaudeMental'}" class="nav-link">Saúde mental</router-link>
+          <router-link :to="{name: 'OQueE'}" class="nav-link">Sobre nós</router-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->

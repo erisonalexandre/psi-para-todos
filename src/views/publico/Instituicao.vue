@@ -1,8 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container my-4">
+    <h1 class="text-center">Instituições</h1>
     <h2>A parceria com as instituições que disponibilizam serviços de psicologia, através de Tecnologias da Informação e
       comunicação (TIC), é de extrema relevância e produz benefícios a todos:</h2>
-    <h2>
+    <h2 class="my-4">
       <ol type="I">
         <li>Auxilia no gerenciamento da agenda direcionando o usuário ao serviço disponível no momento</li>
         <li>Ajuda a organização no acompanhamento do serviço e auxilia a prestação de contas gerando dados sobre o
@@ -17,6 +18,10 @@
         </li>
       </ol>
     </h2>
+    <h2>
+      Na plataforma a instituição podem realizar seu cadastro e cadastrar seus colaboradores, permitindo ainda, a
+      visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
+    </h2>
   </div>
 </template>
 
@@ -25,3 +30,9 @@ export default {
   name: 'Instituicao'
 }
 </script>
+
+<style>
+li {
+  margin-top: 9px;
+}
+</style>

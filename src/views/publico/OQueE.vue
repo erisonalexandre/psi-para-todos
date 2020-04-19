@@ -1,6 +1,6 @@
 <template>
   <div class="container mb-4">
-    <h1>O que é Psi Para Todos?</h1>
+    <h1 class="text-center">O que é Psi Para Todos?</h1>
     <h2>Uma solução que une a população e psicólogos facilitando a conexão e agendamento de serviços psicológicos
       gratuito, de maneira simples, humana e segura, com apenas um clique!</h2>
     <h2>
@@ -34,8 +34,8 @@
           <h2>Somos um time multidisciplinar engajados em formular soluções para promoção da saúde, através de um evento
             promovido pelo Ministério Público do Amazonas, intitulado Pandemic Hackfest Saúde.</h2>
         </div>
-        <div class="col">
-          <img :src="require('../../assets/equipe.svg')" class="equipe">
+        <div class="col d-flex">
+          <img :src="require('../../assets/equipe.svg')" class="equipe mx-auto">
         </div>
       </div>
     </div>
@@ -50,6 +50,10 @@ export default {
 
 <style scoped>
 h1 {
+  text-align: center;
   margin-top: 45px;
+}
+h2 + h2 {
+  margin-top: 25px;
 }
 </style>
