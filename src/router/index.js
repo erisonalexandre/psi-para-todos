@@ -10,6 +10,9 @@ import CadastroProfissional from '../views/cadastro/CadastroProfissional.vue'
 import CadastroOrgao from '../views/cadastro/CadastroOrgao.vue'
 import DashboardPaciente from '../views/DashboardPaciente.vue'
 import DashboardProfissional from '../views/DashboardProfissional.vue'
+import OQueE from '../views/publico/OQueE'
+import Instituicao from '../views/publico/Instituicao'
+import SaudeMental from '../views/publico/SaudeMental'
 
 Vue.use(VueRouter)
 
@@ -60,6 +63,21 @@ const routes = [
     //     forbiddenRedirect: '/403'
     //   }
     // }
+  },
+  {
+    path: '/o-que-e',
+    name: 'OQueE',
+    component: OQueE
+  },
+  {
+    path: '/instituicoes',
+    name: 'Instituicoes',
+    component: Instituicao
+  },
+  {
+    path: '/saude-mental',
+    name: 'SaudeMental',
+    component: SaudeMental
   },
   {
     path: '/dashboard/paciente',

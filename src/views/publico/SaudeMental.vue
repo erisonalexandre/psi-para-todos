@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="row">
       <div class="col">
         <h1>O que é higiene mental?</h1>
@@ -12,55 +12,55 @@
         <div class="container">
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/mantenhase.svg')">
+              <img :src="require('../../assets/mantenhase.svg')">
             </div>
             <div class="col-10"><span class="destaque">Mantenha-se descansado!</span> O sono é essencial para a reparação do corpo econsolidação da memória.</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/pratique.svg')">
+              <img :src="require('../../assets/pratique.svg')">
             </div>
             <div class="col-10"><span class="destaque">Pratique exercícios físicos!</span> Além de outros benefícios, eles ajudam na liberação de neurotransmissores naturais do corpo associados ao bem-estar.</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/rotina.svg')">
+              <img :src="require('../../assets/rotina.svg')">
             </div>
             <div class="col-10"><span class="destaque">Crie uma rotina</span>, de forma que você se mantenha ativo e produtivo durante o dia. A sugestão é que busque intercalar atividades que te tragam bem-estar e atividades de trabalho (laborais)</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/ociosidade.svg')">
+              <img :src="require('../../assets/ociosidade.svg')">
             </div>
             <div class="col-10"><span class="destaque">Evite a ociosidade.</span> A mente vazia pode trazer à tona pensamentos de desvalor, desvalia ou desesperança, ou seja, tenha sempre o que fazer.</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/fake.svg')">
+              <img :src="require('../../assets/fake.svg')">
             </div>
             <div class="col-10"><span class="destaque">Não caia em fake news!</span> Reduza a leitura ou o contato com notícias que podem causar ansiedade ou estresse. Busque informação apenas de fontes fidedignas e dê passos práticos para preparar seus planos, proteger-se e a sua família. Como a OMS, Ministério da Saúde e da Secretaria de saúde do seu Estado e da sua cidade.</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/empatia.svg')">
+              <img :src="require('../../assets/empatia.svg')">
             </div>
             <div class="col-10"><span class="destaque">Tenha empatia.</span> Busque, na medida do possível, apoiar os outros ajudando-os em seus momentos de necessidade. A assistência a outros em seu momento de carência pode ajudar a quem recebe o apoio como a quem dá o auxílio, principalmente às pessoas do grupo de Risco. Ex: telefone para seus vizinhos, familiares ou pessoas em sua comunidade que precisam de assistência extra.</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/cuidedevoce.svg')">
+              <img :src="require('../../assets/cuidedevoce.svg')">
             </div>
             <div class="col-10"><span class="destaque">Cuide de você!</span> Durante seu trabalho em casa procure beber bastante água, e adicionar intervalos de descanso e pausa, isso ajuda a reduzir o nível de estresse e te mantém mais produtivo e saudável.</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/mantenhacontato.svg')">
+              <img :src="require('../../assets/mantenhacontato.svg')">
             </div>
             <div class="col-10"><span class="destaque">Mantenha contato</span> com seus familiares, amigos, namorada(o) e pessoas por quem você tem afeto, você não está sozinho! Você seus pares podem enfrentar isso juntos!</div>
           </div>
           <div class="row">
             <div class="col-2">
-              <img :src="require('../assets/incentive.svg')">
+              <img :src="require('../../assets/incentive.svg')">
             </div>
             <div class="col-10"><span class="destaque">Incentive boas ações!</span> Manifeste seu apoio aos profissionais que estão na linha de frente durante a pandemia, compartilhe boas práticas e bons projetos que podem ajudar a sociedade, como a <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div></div>
           </div>

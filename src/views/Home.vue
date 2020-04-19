@@ -62,7 +62,9 @@
               <br>
               <h2>O profissional será avaliado por atendimento e sua pontuação integrará uma lista de “heróis”.
               </h2>
-              <router-link :to="{name: 'CadastroPofissional'}" class="mt-4" tag="button">QUERO PARTICIPAR</router-link>
+              <div class="justify-content-center d-flex">
+                <router-link :to="{name: 'CadastroPofissional'}" class="mt-4" tag="button">QUERO PARTICIPAR</router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -171,7 +173,7 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <h1>Dicas de Higiene Mental</h1>
+              <h1>Dicas de Saúde Mental</h1>
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-8">
@@ -181,7 +183,7 @@
                     <h2>Então vamos ao que interessa?</h2>
                   </div>
                   <div class="col-4">
-                    <img :src="require('../assets/saudemental.svg')" class="saudemental">
+                    <img :src="require('../assets/saudemental.png')" class="saudemental">
                   </div>
                 </div>
               </div>
@@ -510,12 +512,12 @@ export default {
       div{
         h1{
           text-align: center;
-          color: #d11211;
+          color: #4589ff;
         }
         h2{
           margin-top: 15px;
           margin-bottom: 15px;
-          color: #FFFFFF;
+          color: #6E6E6E;
         }
         .preventivas{
           background-color: #FFFFFF;
