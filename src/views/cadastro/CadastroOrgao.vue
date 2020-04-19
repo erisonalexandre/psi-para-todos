@@ -56,6 +56,9 @@
                 <span>></span>
               </button>
             </div>
+            <div class="d-flex justify-content-center">
+              <router-link :to="{name: 'Cadastro'}">Voltar</router-link>
+            </div>
           </form>
         </card>
       </div>

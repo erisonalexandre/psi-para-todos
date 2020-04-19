@@ -145,6 +145,7 @@ div {
   h1 {
     text-align: center;
     color: #4589ff;
+    margin-bottom: 30px;
   }
 
   h2 {

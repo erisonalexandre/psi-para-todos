@@ -200,6 +200,24 @@
 <script>
 export default {
   name: 'Home',
+  data () {
+    return {
+      rank: [
+        {
+          descricao: 'Psicóloga Clínica especializada em Terapia Cognitivo Comportamental. Atuação como psicoterapeuta em todas as faixas etárias em consultório particular e em rede pública.  Órgão: Semsa',
+          imagem: 'Sou psicólogo e mestrando em Psicologia da Saúde. Tenho 5 anos de experiência profissional em Saúde, formação de docentes e Psicologia Clínica.  Órgão: Susam'
+        },
+        {
+          descricao: 'Sou psicólogo e mestrando em Psicologia da Saúde. Tenho 5 anos de experiência profissional em Saúde, formação de docentes e Psicologia Clínica.  Órgão: Susam',
+          imagem: ''
+        }
+      ],
+      selecionado: {
+        descricao: 'Sou psicólogo e mestrando em Psicologia da Saúde. Tenho 5 anos de experiência profissional em Saúde, formação de docentes e Psicologia Clínica.  Órgão: Susam',
+        imagem: ''
+      }
+    }
+  },
   mounted () {
     var handleHomeContentHeight = function () {
       var altura = $('#conteudo-primeiro').height()

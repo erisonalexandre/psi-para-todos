@@ -22,6 +22,9 @@
       Na plataforma a instituição podem realizar seu cadastro e cadastrar seus colaboradores, permitindo ainda, a
       visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
     </h2>
+    <div class="d-flex justify-content-center">
+      <router-link :to="{name: 'CadastroOrgao'}" class="psi-btn mt-4" tag="button">SEJA UM PARCEIRO</router-link>
+    </div>
   </div>
 </template>
 
@@ -31,8 +34,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 li {
   margin-top: 9px;
+}
+.psi-btn{
+  width: 174px !important;
+}
+.psi-btn:hover{
+  color: #ffffff;
 }
 </style>
