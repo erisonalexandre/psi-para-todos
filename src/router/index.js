@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import SobreNos from '../views/SobreNos.vue'
 import Profissional from '../views/Profissional.vue'
 import Login from '../views/Login.vue'
 import Esqueci from '../views/Esqueci.vue'
@@ -11,6 +10,9 @@ import CadastroProfissional from '../views/cadastro/CadastroProfissional.vue'
 import CadastroOrgao from '../views/cadastro/CadastroOrgao.vue'
 import DashboardPaciente from '../views/DashboardPaciente.vue'
 import DashboardProfissional from '../views/DashboardProfissional.vue'
+import OQueE from '../views/publico/OQueE'
+import Instituicao from '../views/publico/Instituicao'
+import SaudeMental from '../views/publico/SaudeMental'
 
 Vue.use(VueRouter)
 
@@ -19,11 +21,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/sobrenos',
-    name: 'SobreNos',
-    component: SobreNos
   },
   {
     path: '/profissional',
@@ -66,6 +63,21 @@ const routes = [
     //     forbiddenRedirect: '/403'
     //   }
     // }
+  },
+  {
+    path: '/o-que-e',
+    name: 'OQueE',
+    component: OQueE
+  },
+  {
+    path: '/instituicoes',
+    name: 'Instituicoes',
+    component: Instituicao
+  },
+  {
+    path: '/saude-mental',
+    name: 'SaudeMental',
+    component: SaudeMental
   },
   {
     path: '/dashboard/paciente',

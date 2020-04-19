@@ -8,15 +8,18 @@
 
       <b-collapse id="nav-collapse" class="ml-md-4" is-nav>
         <b-navbar-nav>
-          <router-link v-if="!$auth.check()" :to="{name: 'SobreNos'}" class="nav-link">Sobre nós</router-link>
-          <router-link v-if="!$auth.check()" :to="{name: 'Profissional'}" class="nav-link">Profissional</router-link>
           <router-link v-if="$auth.check('profissional')" :to="{name: 'DashboardProfissional'}" class="nav-link">Dashboard</router-link>
           <router-link v-if="$auth.check('paciente')" :to="{name: 'DashboardPaciente'}" class="nav-link">Dashboard</router-link>
+          <a href="/#voce-profissional" class="nav-link">Profissional</a>
+          <a href="/#rank" class="nav-link">Rank dos Heróis</a>
+          <router-link :to="{name: 'Instituicoes'}" class="nav-link">Instituições</router-link>
+          <router-link :to="{name: 'SaudeMental'}" class="nav-link">Saúde mental</router-link>
+          <router-link :to="{name: 'OQueE'}" class="nav-link">Sobre nós</router-link>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto" id="btn-navbar">
-          <router-link v-if="!$auth.check()" to="/login" tag="button" class="btn btn-primary mr-2">Login</router-link>
+          <router-link v-if="!$auth.check()" to="/login" tag="button" class="btn btn-primary mr-lg-2 btn-login">Login</router-link>
           <router-link v-if="!$auth.check()" to="/cadastro" tag="button" class="btn btn-primary">Cadastro</router-link>
           <b-nav-item-dropdown right no-caret v-if="$auth.check()">
             <!-- Using 'button-content' slot -->
@@ -75,6 +78,20 @@ export default {
   }
   #btn-navbar {
     align-items: center;
+    .btn:first-child {
+      background-color: #458AFF;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #btn-navbar {
+    .btn:first-child {
+      background-color: #fff;
+      color: #458AFF;
+    }
   }
 }
 .navbar-psi {
@@ -99,10 +116,6 @@ export default {
     padding-top: 0;
     padding-bottom: 0;
     border: none;
-  }
-  .btn:first-child {
-    background-color: #fff;
-    color: #458AFF;
   }
   .btn:last-child {
     background-color: #FD3C65;
