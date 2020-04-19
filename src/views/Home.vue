@@ -9,7 +9,7 @@
             <div class="d-md-none mb-4">
               <img :src="require('../assets/part1.svg')" class="img-fluid">
             </div>
-            <a href="#sobre" class="button-home"><button>SAIBA MAIS</button></a>
+            <router-link :to="{name: 'OQueE'}" tag="button">SAIBA MAIS</router-link>
           </div>
         </div>
         <div class="col d-none d-md-flex justify-content-center align-items-center p-5" style="box-sizing: border-box">
@@ -27,7 +27,7 @@
             <h1>Quem pode usar?</h1>
             <h2>Qualquer pessoa, maior de 18 anos, pode acessar nossa plataforma, se cadastrar e agendar um dia e horário para falar com um dos profissionais disponíveis via chamada de vídeo, áudio ou chat.</h2>
             <div class="d-flex justify-content-center">
-              <router-link :to="{name: 'Cadastro'}" tag="button">CADASTRAR</router-link>
+              <router-link :to="{name: 'CadastroPaciente'}" tag="button">CADASTRAR</router-link>
             </div>
           </div>
         </div>
@@ -181,6 +181,9 @@
 
                     <h2>Ressaltamos que esse material não substitui a consulta psicológica, que deve ser realizada por um Profissional de Psicologia com Registro ativo no Conselho de Psicologia.</h2>
                     <h2>Então vamos ao que interessa?</h2>
+                    <div class="d-flex justify-content-center">
+                      <router-link :to="{name: 'SaudeMental'}" tag="button">LEIA MAIS</router-link>
+                    </div>
                   </div>
                   <div class="col-4">
                     <img :src="require('../assets/saudemental.png')" class="saudemental">

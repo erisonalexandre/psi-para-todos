@@ -19,7 +19,7 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto" id="btn-navbar">
-          <router-link v-if="!$auth.check()" to="/login" tag="button" class="btn btn-primary mr-2">Login</router-link>
+          <router-link v-if="!$auth.check()" to="/login" tag="button" class="btn btn-primary mr-lg-2 btn-login">Login</router-link>
           <router-link v-if="!$auth.check()" to="/cadastro" tag="button" class="btn btn-primary">Cadastro</router-link>
           <b-nav-item-dropdown right no-caret v-if="$auth.check()">
             <!-- Using 'button-content' slot -->
@@ -78,6 +78,20 @@ export default {
   }
   #btn-navbar {
     align-items: center;
+    .btn:first-child {
+      background-color: #458AFF;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #btn-navbar {
+    .btn:first-child {
+      background-color: #fff;
+      color: #458AFF;
+    }
   }
 }
 .navbar-psi {
@@ -102,10 +116,6 @@ export default {
     padding-top: 0;
     padding-bottom: 0;
     border: none;
-  }
-  .btn:first-child {
-    background-color: #fff;
-    color: #458AFF;
   }
   .btn:last-child {
     background-color: #FD3C65;
