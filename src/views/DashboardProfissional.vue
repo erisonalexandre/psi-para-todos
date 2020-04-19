@@ -34,27 +34,36 @@
               <td class="tg-hmp38">17:00h PM</td>
               <td class="tg-hmp38">18/04/2020<br></td>
               <td class="tg-hmp38">
-                <img :src="require('../assets/confirm.svg')" class="img-fluid" width="15px">
-                <img :src="require('../assets/cancel.svg')" class="img-fluid" width="15px">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
               </td>
             </tr>
             <tr>
               <td class="tg-hmp38">Sra. Bruna</td>
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">11:00h AM</span><br></td>
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">19/04/2020</span></td>
-              <td class="tg-hmp38">img img</td>
+              <td class="tg-hmp38">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
+              </td>
             </tr>
             <tr>
               <td class="tg-hmp38">Sra Renata</td>
               <td class="tg-hmp38">14:00 PM</td>
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">21/04/2020</span><br></td>
-              <td class="tg-hmp38">img img</td>
+              <td class="tg-hmp38">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
+              </td>
             </tr>
             <tr>
               <td class="tg-hmp38">Sr Apollo</td>
               <td class="tg-hmp38">16:00 PM</td>
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">20/04/2020</span></td>
-              <td class="tg-hmp38">img img</td>
+              <td class="tg-hmp38">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
+                <input type="image" id="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
+              </td>
             </tr>
           </table>
         </card>
