@@ -2,13 +2,13 @@
   <div class="container mb-4">
     <h1 class="text-center">O que é Psi Para Todos?</h1>
     <h2>Uma solução que une a população e psicólogos facilitando a conexão e agendamento de serviços psicológicos
-      gratuito, de maneira simples, humana e segura, com apenas um clique!</h2>
+      voluntariamente, de maneira simples, humana e segura, com apenas um clique!</h2>
     <h2>
-      Períodos de pandemia e quarentena aumentam ainda mais os casos de transtornos ansiosos, como no caso da COVID-19,
-      junto a isso o problema pode-se tornar ainda maior com agravante de uma possível crise econômica.
+      Períodos de pandemia e quarentena aumentam ainda mais os casos de transtornos ansiosos, como no caso da COVID-19.
+      O problema pode-se tornar ainda maior com agravante de uma possível crise econômica.
     </h2>
     <h2>A oferta de serviços de atendimento psicológico voluntário é uma prática existente não só pelos profissionais
-      psicólogos, como também, por instituições públicas e privadas.
+      psicólogos, mas também por instituições públicas e privadas.
     </h2>
     <h2>Diante deste cenário, a demanda pela busca de serviços torna-se maior e a necessidade de distanciamento
       isolamento social pode dificultar que o cidadão o encontre.</h2>
