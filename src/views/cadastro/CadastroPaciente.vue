@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
           <label for="password" class="form-label">Senha</label>
-          <input type="password" class="form-control" v-model="form.password" required id="password">
+          <input type="password" minlength="6" class="form-control" v-model="form.password" required id="password">
         </div>
         <div class="form-group d-flex justify-content-center align-items-center flex-column">
           <button class="btn psi-btn">

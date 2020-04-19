@@ -3,14 +3,17 @@
     <section class="container" id="primeiro">
       <div class="partone row">
         <div class="col d-flex justify-content-center align-items-center">
-          <div class="text-center text-md-center" id="conteudo-primeiro">
+          <div class="text-center text-md-left" id="conteudo-primeiro">
             <h1>A plataforma que conecta você ao atendimento ideal</h1>
             <h2>Você já conhece a <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div>?</h2>
-            <div class="align-items-center">
-              <img :src="require('../assets/part1.svg')">
+            <div class="d-md-none mb-4">
+              <img :src="require('../assets/part1.svg')" class="img-fluid">
             </div>
-            <a href="#saiba" class="button-home"><button>SAIBA MAIS</button></a>
+            <a href="#sobre" class="button-home"><button>SAIBA MAIS</button></a>
           </div>
+        </div>
+        <div class="col d-none d-md-flex justify-content-center align-items-center p-5" style="box-sizing: border-box">
+          <img :src="require('../assets/part1.svg')" class="img-fluid">
         </div>
       </div>
     </section>
@@ -21,17 +24,6 @@
             <img :src="require('../assets/part2.svg')" class="img-fluid">
           </div>
           <div class="col-md-8">
-            <h1>O que é Psi Para Todos?</h1>
-            <h2>Uma solução que une a população e psicólogos facilitando a conexão e agendamento de serviços psicológicos
-              gratuito, de maneira simples, humana e segura, com apenas um clique!</h2>
-            <h2>
-              Períodos de pandemia e quarentena aumentam ainda mais os casos de transtornos ansiosos, como no caso da COVID-19, junto a isso o problema pode-se tornar ainda maior com agravante de uma possível crise econômica.
-            </h2>
-            <h2>A oferta de serviços de atendimento psicológico voluntário é uma prática existente não só pelos profissionais psicólogos, como também, por instituições públicas e privadas.
-            </h2>
-            <h2>Diante deste cenário, a demanda pela busca de serviços torna-se maior e a necessidade de distanciamento isolamento social pode dificultar que o cidadão o encontre.</h2>
-            <h2> O <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div> é um serviço que reúne as ofertas de atendimento psicológico voluntário de profissionais e instituições públicas e privadas fazendo uma conexão com o cidadão.
-            </h2>
             <h1>Quem pode usar?</h1>
             <h2>Qualquer pessoa, maior de 18 anos, pode acessar nossa plataforma, se cadastrar e agendar um dia e horário para falar com um dos profissionais disponíveis via chamada de vídeo, áudio ou chat.</h2>
             <div class="d-flex justify-content-center">
@@ -55,27 +47,28 @@
     <section class="container" id="voce-profissional">
       <div class="partfour row">
         <div class="col">
-          <h1>Você que é um profissional na área da Psicologia?</h1>
+          <h1>Você é um profissional na área da Psicologia?</h1>
           <div class="row">
             <div class="col d-none d-md-block">
               <img :src="require('../assets/profi.svg')">
             </div>
-            <div class="col">
+            <div class="col-md-8 text-left">
               <h2>O <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div> permite crescimento profissional e conecta o psicólogo com pacientes em horários
                 flexíveis de acordo com a disponibilidade de ambos.
               </h2>
-              <h2>Você define os horários que pode atender, o tempo de consulta, etc.</h2>
-              <h2>O <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div> permite que o profissional com CRP ativo e cadastro no E-Psi participe de forma individual e em caráter voluntário a partir do cadastramento na plataforma.
+              <br>
+              <h2>A plataforma permite que o profissional com CRP ativo e cadastro no E-Psi participe de forma individual e em caráter voluntário a partir do cadastramento na plataforma.
               </h2>
-              <h2>Além de permitir o gerenciamento da agenda de atendimento e o acompanhamento do serviço, ao final do atendimento, o profissional será avaliado e sua pontuação integrará uma lista de “heróis”.
+              <br>
+              <h2>O profissional será avaliado por atendimento e sua pontuação integrará uma lista de “heróis”.
               </h2>
-              <router-link :to="{name: 'CadastroPofissional'}" tag="button">QUERO PARTICIPAR</router-link>
+              <router-link :to="{name: 'CadastroPofissional'}" class="mt-4" tag="button">QUERO PARTICIPAR</router-link>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="partfive" id="rank">
+    <section class="partfive" id="rank" style="background-color: #E2ECFF;">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -167,17 +160,7 @@
             </div>
             <div class="col-md-8 text-justify">
               <h1>Instituições</h1>
-              <h2>A parceria com as instituições que disponibilizam serviços de psicologia, através de Tecnologias da Informação e comunicação (TIC), é de extrema relevância e produz benefícios a todos:</h2>
-              <h2>
-                <ol type="I">
-                  <li>Auxilia no gerenciamento da agenda direcionando o usuário ao serviço disponível no momento</li>
-                  <li>Ajuda a organização no acompanhamento do serviço e auxilia a prestação de contas gerando dados sobre o serviço como: confirmação de atendimento realizado, quantidade de horas de serviços já realizadas e muito mais.</li>
-                  <li>Proporciona à população um canal transparente com informações seguras e atendimento humano, para minimizar prejuízos.</li>
-                  <li>O fluxo de acessos e o aumento da demanda produz dados que serão disponibilizados aos setores públicos para o desenvolvimento de estratégias e de políticas públicas cada vez melhores de saúde mental.</li>
-                </ol>
-              </h2>
-
-              <h2>Na plataforma a instituição podem realizar seu cadastro e cadastrar seus colaboradores, permitindo ainda, a visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
+              <h2 class="my-4">Na plataforma a instituição podem realizar seu cadastro e cadastrar seus colaboradores, permitindo ainda, a visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
               </h2>
               <router-link :to="{name: 'CadastroOrgao'}" tag="button">SEJA UM PARCEIRO</router-link>
             </div>
@@ -201,114 +184,7 @@
                     <img :src="require('../assets/saudemental.svg')" class="saudemental">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <h1>O que é higiene mental?</h1>
-                    <h2>A higiene mental nada mais é do que um conjunto de hábitos e práticas para manter sua mente prevenida dos diversos adoecimentos psíquicos. Durante a pandemia muito se fala quanto a higiene das mãos e de ações para manter você e as outras pessoas longe do vírus, e quando falamos de higiene mental seguimos a mesma lógica, pois o nível elevado de estresse e ansiedade diante do cenário pode te levar ao adoecimento psíquico e emocional.</h2>
-                  </div>
-                </div>
-                <div class="row preventivas">
-                  <div class="col">
-                    <h1>E quais ações preventivas devo tomar?</h1>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/mantenhase.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Mantenha-se descansado!</span> O sono é essencial para a reparação do corpo econsolidação da memória.</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/pratique.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Pratique exercícios físicos!</span> Além de outros benefícios, eles ajudam na liberação de neurotransmissores naturais do corpo associados ao bem-estar.</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/rotina.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Crie uma rotina</span>, de forma que você se mantenha ativo e produtivo durante o dia. A sugestão é que busque intercalar atividades que te tragam bem-estar e atividades de trabalho (laborais)</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/ociosidade.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Evite a ociosidade.</span> A mente vazia pode trazer à tona pensamentos de desvalor, desvalia ou desesperança, ou seja, tenha sempre o que fazer.</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/fake.svg')">
-                      </div>
-                        <div class="col-10"><span class="destaque">Não caia em fake news!</span> Reduza a leitura ou o contato com notícias que podem causar ansiedade ou estresse. Busque informação apenas de fontes fidedignas e dê passos práticos para preparar seus planos, proteger-se e a sua família. Como a OMS, Ministério da Saúde e da Secretaria de saúde do seu Estado e da sua cidade.</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/empatia.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Tenha empatia.</span> Busque, na medida do possível, apoiar os outros ajudando-os em seus momentos de necessidade. A assistência a outros em seu momento de carência pode ajudar a quem recebe o apoio como a quem dá o auxílio, principalmente às pessoas do grupo de Risco. Ex: telefone para seus vizinhos, familiares ou pessoas em sua comunidade que precisam de assistência extra.</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/cuidedevoce.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Cuide de você!</span> Durante seu trabalho em casa procure beber bastante água, e adicionar intervalos de descanso e pausa, isso ajuda a reduzir o nível de estresse e te mantém mais produtivo e saudável.</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/mantenhacontato.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Mantenha contato</span> com seus familiares, amigos, namorada(o) e pessoas por quem você tem afeto, você não está sozinho! Você seus pares podem enfrentar isso juntos!</div>
-                      </div>
-                      <div class="row">
-                        <div class="col-2">
-                          <img :src="require('../assets/incentive.svg')">
-                        </div>
-                        <div class="col-10"><span class="destaque">Incentive boas ações!</span> Manifeste seu apoio aos profissionais que estão na linha de frente durante a pandemia, compartilhe boas práticas e bons projetos que podem ajudar a sociedade, como a <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div></div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <h2>Estar em quarentena não significa estar só no mundo! Existem milhões de pessoas que assim como você estão em suas casas e isso é um ato de amor, respeito ao próximo! São atos em favor da vida!</h2>
-                          <h2>Cuidar da saúde mental é cuidar de quem você é!</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <h1>E nos casos de crise ou de maior gravidade?</h1>
-                    <h2>Procure imediatamente um profissional de Psicologia, pois um auxílio profissional será eficaz para redução dos prejuízos e enfrentamento da dificuldade. </h2>
-                    <h2>Não pense que é um “ato de fraqueza” você pode estar doente e a doença precisa ser tratada adequadamente.</h2>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <h1>Você não está sozinho!</h1>
-                    <h2>Hoje existem diversas doenças mentais, consideradas por alguns como “frescura”, porém sabemos hoje através de estudos científicos que são doenças, e possuem tratamento!</h2>
-                    <h2>A Psi para todos possui profissionais cadastrados, de diversos órgãos e projetos, qualificados para atender as mais diversas demandas! Cadastre-se e agende sua consulta <router-link :to="{name:'Cadastro'}">clicando aqui</router-link>.</h2>
-                    <h2>Vamos juntos fazer a nossa parte e cuidar da nossa saúde física e mental, contribuindo também co a integridade de quem tanto amamos.</h2>
-                  </div>
-                </div>
               </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="parteight" id="sobre">
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col">
-            <h1>Nossa Missão</h1>
-            <h2>Nossa missão é que a <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div> atenda à população que não tem acesso a serviços psicológicos e conectar cada vez mais as pessoas com psicólogos.</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h1>Equipe de Desenvolvimento</h1>
-            <h2>Somos um time multidisciplinar engajados em formular soluções para promoção da saúde, através de um evento promovido pelo Ministério Público do Amazonas, intitulado Pandemic Hackfest Saúde.</h2>
-          </div>
-          <div class="col">
-            <img :src="require('../assets/equipe.svg')" class="equipe">
           </div>
         </div>
       </div>
@@ -628,7 +504,7 @@ export default {
     }
 
     .partseven{
-      background-color: #58B7BD;
+      background-color: #E2ECFF;
       padding-top: 20px;
       padding-bottom: 10px;
       div{

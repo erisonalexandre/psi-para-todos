@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
           <label for="cnpj" class="form-label">CNPJ</label>
-          <input type="text" class="form-control" v-model="form.cnpj" required id="cnpj">
+          <input type="text" minlength="6" class="form-control" v-model="form.cnpj" required id="cnpj">
         </div>
         <div class="form-group">
           <label for="password" class="form-label">Senha</label>
