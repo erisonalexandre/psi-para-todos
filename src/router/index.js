@@ -95,6 +95,10 @@ const routes = [
     }
   },
   {
+    path: '/dashboard/organizacao',
+    redirect: '/dashboard/instituto'
+  },
+  {
     path: '/dashboard/instituto',
     name: 'DashboardOrgao',
     component: DashboardOrgao,
