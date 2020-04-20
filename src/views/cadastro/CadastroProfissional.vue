@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
           <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-          <input type="text" class="form-control" v-model="form.data_nascimento" required id="data_nascimento">
+          <input type="text" onfocus="(this.type='date')" class="form-control" v-model="form.data_nascimento" required id="data_nascimento">
         </div>
         <div class="form-group">
           <label for="cpf" class="form-label">CPF</label>
@@ -79,6 +79,7 @@ export default {
       status: 'nao_aceito',
       showCadastro: true,
       showTermo: false,
+      liberarContinuar: true,
       form: {
         nome: null,
         cpf: null,
@@ -98,6 +99,7 @@ export default {
     },
     submit () {
       // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
+      this.liberarContinuar = false
       this.$http.post('/professionals', this.form).then((response) => {
         this.$auth.login({
           data: this.form,
@@ -107,14 +109,25 @@ export default {
             localStorage.setItem('user', JSON.stringify(data.user))
             this.$toast.success('Bem vindo!', `Sucesso ${data.user.nome}`, this.$root.toastConfig.success)
             this.$router.replace({ path: '/dashboard/' + data.user.perfil })
+            this.liberarContinuar = true
           },
           error: function (error) {
             console.error(error)
+            this.$router.replace({ path: '/login' })
           },
           rememberMe: true,
           fetchUser: false
         })
       })
+        .catch((error) => {
+          if (error.response.data.error === 'User already exists') {
+            this.$toast.error('Usuario ja cadastrado', 'Erro!', this.$root.toastConfig.error)
+          } else {
+            this.$toast.error('Erro ao logar, verifique seus dados', 'Erro!', this.$root.toastConfig.error)
+          }
+          console.error(error.response)
+          this.liberarContinuar = true
+        })
     }
   }
 }

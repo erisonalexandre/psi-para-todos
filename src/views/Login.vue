@@ -5,11 +5,11 @@
         <form @submit.prevent="submit">
           <div class="form-group mb-4">
             <label for="username" class="form-label">Email</label>
-            <input type="text" class="form-control" v-model="form.email" id="username">
+            <input type="email" required class="form-control" v-model="form.email" id="username">
           </div>
           <div class="form-group">
             <label for="password" class="form-label">Senha</label>
-            <input type="password" class="form-control" v-model="form.password" id="password">
+            <input type="password" required class="form-control" v-model="form.password" id="password">
           </div>
           <div class="form-group d-flex justify-content-center align-items-center flex-column" style="margin-top: 4rem">
             <button class="psi-btn mb-4">
@@ -45,11 +45,12 @@ export default {
           this.$auth.token('jwt-auth', data.token)
           this.$auth.user(data.user)
           localStorage.setItem('user', JSON.stringify(data.user))
-          this.$toast.success('Bem vindo!', `Sucesso ${data.user.nome}`, this.$root.toastConfig.success)
+          this.$toast.success(`Bem vindo! ${data.user.nome}`, 'Sucesso', this.$root.toastConfig.success)
           this.$router.replace({ path: 'dashboard/' + data.user.perfil })
         },
         error: function (error) {
           console.error(error)
+          this.$toast.error('Usuario não cadastrado', 'Erro!', this.$root.toastConfig.error)
         },
         rememberMe: true,
         fetchUser: false
