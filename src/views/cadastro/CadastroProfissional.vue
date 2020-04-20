@@ -36,6 +36,9 @@
             <p>Continuar</p>
             <span>></span>
           </button>
+          <div class="d-flex justify-content-center">
+            <router-link :to="{name: 'Cadastro'}">Voltar</router-link>
+          </div>
         </div>
       </form>
     </card>
@@ -59,6 +62,9 @@
                 <p>Continuar</p>
                 <span>></span>
               </button>
+              <div class="d-flex justify-content-center">
+                <router-link :to="{name: 'Cadastro'}">Voltar</router-link>
+              </div>
             </div>
           </form>
         </card>
