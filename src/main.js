@@ -13,6 +13,7 @@ import VueAuth from '@websanova/vue-auth'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueIziToast from 'vue-izitoast'
 import VueDatepicker from 'vuejs-datepicker/dist/vuejs-datepicker.esm.js'
+import vSelect from 'vue-select'
 
 import 'izitoast/dist/css/iziToast.min.css'
 import '@fortawesome/fontawesome-free/js/all.js'
@@ -23,6 +24,7 @@ require('./bootstrap')
 Vue.router = router
 
 Vue.component('datepicker', VueDatepicker)
+Vue.component('v-select', vSelect)
 
 Vue.use(VueIziToast)
 Vue.use(BootstrapVue)
