@@ -78,6 +78,7 @@ export default {
       status: 'nao_aceito',
       showCadastro: true,
       showTermo: false,
+      liberarContinuar: true,
       form: {
         nome_fantasia: null,
         cnpj: null,
@@ -96,6 +97,7 @@ export default {
     },
     submit () {
       // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
+      this.liberarContinuar = false
       this.$http.post('/orgaos', this.form).then((response) => {
         this.$auth.login({
           data: this.form,
@@ -105,14 +107,25 @@ export default {
             localStorage.setItem('user', JSON.stringify(data.user))
             this.$toast.success('Bem vindo!', `Sucesso ${data.user.nome}`, this.$root.toastConfig.success)
             this.$router.replace({ path: '/dashboard/' + data.user.perfil })
+            this.liberarContinuar = true
           },
           error: function (error) {
             console.error(error)
+            this.$router.replace({ path: '/login' })
           },
           rememberMe: true,
           fetchUser: false
         })
       })
+        .catch((error) => {
+          if (error.response.data.error === 'User already exists') {
+            this.$toast.error('Usuario ja cadastrado', 'Erro!', this.$root.toastConfig.error)
+          } else {
+            this.$toast.error('Erro ao logar, verifique seus dados', 'Erro!', this.$root.toastConfig.error)
+          }
+          console.error(error)
+          this.liberarContinuar = true
+        })
     }
   }
 }

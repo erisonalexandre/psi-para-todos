@@ -17,7 +17,8 @@
         </div>
         <div class="form-group">
           <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-          <input type="text" class="form-control" v-model="form.data_nascimento" required id="data_nascimento">
+          <input type="text" onfocus="(this.type='date')" class="form-control" v-model="form.data_nascimento" required
+                 id="data_nascimento">
         </div>
         <div class="form-group">
           <label for="cpf" class="form-label">CPF</label>
@@ -35,7 +36,7 @@
         </div>
       </form>
     </card>
-    <div  v-if="showTermo">
+    <div v-if="showTermo">
       <div class="container">
         <card>
           <termo-usuarios></termo-usuarios>
@@ -51,8 +52,8 @@
               Eu aceitos os Termos de Uso e Políticas de Privacidade
             </b-form-checkbox>
             <div class="d-flex justify-content-center">
-              <button class="btn psi-btn" :disabled="status === 'nao_aceito'">
-                <p>Continuar</p>
+              <button class="btn psi-btn" :disabled="statusBotao">
+                <p>Cadastrar</p>
                 <span>></span>
               </button>
             </div>
@@ -75,6 +76,7 @@ export default {
       status: 'nao_aceito',
       showCadastro: true,
       showTermo: false,
+      liberarContinuar: true,
       form: {
         nome: null,
         cpf: null,
@@ -86,6 +88,11 @@ export default {
     }
   },
   mixins: [animarInputs],
+  computed: {
+    statusBotao () {
+      return (this.status === 'nao_aceito') || (!this.liberarContinuar && this.status === 'aceito')
+    }
+  },
   methods: {
     continuar () {
       this.showCadastro = false
@@ -93,6 +100,7 @@ export default {
     },
     submit () {
       // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
+      this.liberarContinuar = false
       this.$http.post('/pacientes', this.form).then((response) => {
         this.$auth.login({
           data: this.form,
@@ -102,14 +110,25 @@ export default {
             localStorage.setItem('user', JSON.stringify(data.user))
             this.$toast.success('Bem vindo!', `Sucesso ${data.user.nome}`, this.$root.toastConfig.success)
             this.$router.replace({ path: '/dashboard/' + data.user.perfil })
+            this.liberarContinuar = true
           },
           error: function (error) {
             console.error(error)
+            this.$router.replace({ path: '/login' })
           },
           rememberMe: true,
           fetchUser: false
         })
       })
+        .catch((error) => {
+          if (error.response.data.error === 'User already exists') {
+            this.$toast.error('Usuario ja cadastrado', 'Erro!', this.$root.toastConfig.error)
+          } else {
+            this.$toast.error('Erro ao logar, verifique seus dados', 'Erro!', this.$root.toastConfig.error)
+          }
+          console.error(error)
+          this.liberarContinuar = true
+        })
     }
   }
 }
