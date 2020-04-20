@@ -204,6 +204,10 @@ export default {
 .profCadastrados{
   padding: 20px;
 }
+.rank-usuario {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .card-header{
   background: linear-gradient(90deg, #43C7FF 0%, #44A9FF 64.99%, #4584FF 102.13%);
   color: #fff;
