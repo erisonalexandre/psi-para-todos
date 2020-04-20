@@ -206,7 +206,7 @@ export default {
         {
           descricao: 'Bete está no ramo da psicologia há 3 anos. Possui uma clínica de atendimento com especialização em transtornos de ansiedade.',
           imagem: require('../assets/bete.svg'),
-          nome: ''
+          nome: 'Bete Santos'
         },
         {
           descricao: 'Psicóloga Clínica especializada em Terapia Cognitivo Comportamental. Atuação como psicoterapeuta em todas as faixas etárias em consultório particular e em rede pública.  Órgão: Semsa',

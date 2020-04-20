@@ -1,6 +1,6 @@
 <template>
   <div class="altura-100-centro">
-    <card class="px-3" v-if="showCadastro">
+    <card class="px-3" v-show="showCadastro">
       <h1 class="text-center text-psi">Faça seu cadastro</h1>
       <form ref="form" @submit.prevent="continuar">
         <div class="form-group">
@@ -42,7 +42,7 @@
         </div>
       </form>
     </card>
-    <div  v-if="showTermo">
+    <div  v-show="showTermo">
       <div class="container">
         <card>
           <termo-usuarios></termo-usuarios>
@@ -58,6 +58,10 @@
               Eu aceitos os Termos de Uso e Políticas de Privacidade
             </b-form-checkbox>
             <div class="d-flex justify-content-center">
+              <button class="btn psi-btn pl-2 mr-2 d-none d-md-flex" @click="voltar">
+                <span>&#60;</span>
+                <p>Voltar</p>
+              </button>
               <button class="btn psi-btn" :disabled="status === 'nao_aceito'">
                 <p>Continuar</p>
                 <span>></span>
@@ -65,6 +69,12 @@
               <div class="d-flex justify-content-center">
                 <router-link :to="{name: 'Cadastro'}">Voltar</router-link>
               </div>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+              <button class="btn psi-btn pl-2 mr-2 d-flex d-md-none" @click="voltar">
+                <span>&#60;</span>
+                <p>Voltar</p>
+              </button>
             </div>
           </form>
         </card>
@@ -99,6 +109,10 @@ export default {
   },
   mixins: [animarInputs],
   methods: {
+    voltar () {
+      this.showCadastro = true
+      this.showTermo = false
+    },
     continuar () {
       this.showCadastro = false
       this.showTermo = true
