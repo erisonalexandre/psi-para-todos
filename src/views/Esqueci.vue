@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col">
         <card>
+          <!-- testando -->
           <h1>Esqueci minha senha</h1>
           <form>
             <div class="form-group mb-4">
