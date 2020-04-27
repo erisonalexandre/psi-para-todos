@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import animarInputs from '../mixins/animarInputs'
+import animarInputs from '../../mixins/animarInputs'
 
 export default {
   name: 'Login',
@@ -41,20 +41,17 @@ export default {
     submit () {
       this.$auth.login({
         data: this.form,
-        success: function ({ data }) {
-          this.$auth.token('jwt-auth', data.token)
-          this.$auth.user(data.user)
-          localStorage.setItem('user', JSON.stringify(data.user))
-          this.$toast.success(`Bem vindo! ${data.user.nome}`, 'Sucesso', this.$root.toastConfig.success)
-          this.$router.replace({ path: 'dashboard/' + data.user.perfil })
+        rememberMe: true,
+        fetchUser: true
+      })
+        .then(({ data }) => {
+          this.$toast.success(`Bem vindo! ${data.data.nome}`, 'Sucesso', this.$root.toastConfig.success)
+          this.$router.replace({ path: 'dashboard/' + data.data.perfil })
         },
-        error: function (error) {
+        (error) => {
           console.error(error)
           this.$toast.error('Usuario não cadastrado', 'Erro!', this.$root.toastConfig.error)
-        },
-        rememberMe: true,
-        fetchUser: false
-      })
+        })
       // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
       // axios.post('/sessions', this.form).then((response) => {
       //   console.log(response)

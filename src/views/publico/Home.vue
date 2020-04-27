@@ -7,13 +7,13 @@
             <h1>A plataforma que conecta você ao atendimento ideal</h1>
             <h2>Você já conhece a <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div>?</h2>
             <div class="d-md-none mb-4">
-              <img :src="require('../assets/part1.svg')" class="img-fluid">
+              <img :src="require('../../assets/part1.svg')" class="img-fluid">
             </div>
             <router-link :to="{name: 'OQueE'}" tag="button">SAIBA MAIS</router-link>
           </div>
         </div>
         <div class="col d-none d-md-flex justify-content-center align-items-center p-5" style="box-sizing: border-box">
-          <img :src="require('../assets/part1.svg')" class="img-fluid">
+          <img :src="require('../../assets/part1.svg')" class="img-fluid">
         </div>
       </div>
     </section>
@@ -21,7 +21,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-4 d-none d-md-block">
-            <img :src="require('../assets/part2.svg')" class="img-fluid">
+            <img :src="require('../../assets/part2.svg')" class="img-fluid">
           </div>
           <div class="col-md-8">
             <h1>Quem pode usar?</h1>
@@ -37,10 +37,10 @@
       <div class="container">
         <h1 class="mt-0">Venha ser nosso parceiro</h1>
         <div class="d-flex">
-          <img :src="require('../assets/susam1.svg')" class="logo-partthree img-fluid mx-auto">
-          <img :src="require('../assets/vivamente1.svg')" class="logo-partthree d-none d-md-block">
-          <img :src="require('../assets/pisco1.svg')" class="logo-partthree img-fluid mx-auto">
-          <img :src="require('../assets/clinica1.svg')" class="logo-partthree d-none d-md-block">
+          <img :src="require('../../assets/susam1.svg')" class="logo-partthree img-fluid mx-auto">
+          <img :src="require('../../assets/vivamente1.svg')" class="logo-partthree d-none d-md-block">
+          <img :src="require('../../assets/pisco1.svg')" class="logo-partthree img-fluid mx-auto">
+          <img :src="require('../../assets/clinica1.svg')" class="logo-partthree d-none d-md-block">
         </div>
       </div>
     </section>
@@ -50,7 +50,7 @@
           <h1>Você é um profissional na área da Psicologia?</h1>
           <div class="row">
             <div class="col d-none d-md-block">
-              <img :src="require('../assets/profi.svg')">
+              <img :src="require('../../assets/profi.svg')">
             </div>
             <div class="col-md-8 text-left">
               <h2>O <div class="nomedosite"><span class="psipara">Psi Para</span> <span class="todos">Todos</span></div> permite crescimento profissional e conecta o psicólogo com pacientes em horários
@@ -81,50 +81,50 @@
                   <card class="px-3">
                     <div class="container">
                       <div class="row rank-usuario" @click="selecionarRank(rank[0])">
-                        <div class="col-4"><img class="img-rank" :src="require('../assets/bete.svg')"></div>
+                        <div class="col-4"><img class="img-rank" :src="require('../../assets/bete.svg')"></div>
                         <div class="col-8 rank-descricao">
                           <h2>Bete Santos</h2>
                           <h4>Herói Diamante <span class="icon-diamante"></span></h4>
                           <div class="icones1">
-                            <img :src="require('../assets/amizade.svg')">
-                            <img :src="require('../assets/bate-papo.svg')">
-                            <img :src="require('../assets/amigo.svg')">
+                            <img :src="require('../../assets/amizade.svg')">
+                            <img :src="require('../../assets/bate-papo.svg')">
+                            <img :src="require('../../assets/amigo.svg')">
                           </div>
                         </div>
                       </div>
                       <div class="row rank-usuario" @click="selecionarRank(rank[2])">
-                        <div class="col-4"><img class="img-rank" :src="require('../assets/perfil2.svg')"></div>
+                        <div class="col-4"><img class="img-rank" :src="require('../../assets/perfil2.svg')"></div>
                         <div class="col-8 rank-descricao">
                           <h2>Amanda Louise</h2>
                           <h4>Herói Diamante <span class="icon-diamante"></span></h4>
                           <div class="icones1">
-                            <img :src="require('../assets/mao.svg')">
-                            <img :src="require('../assets/bate-papo1.svg')">
-                            <img :src="require('../assets/amizade.svg')">
+                            <img :src="require('../../assets/mao.svg')">
+                            <img :src="require('../../assets/bate-papo1.svg')">
+                            <img :src="require('../../assets/amizade.svg')">
                           </div>
                         </div>
                       </div>
                       <div class="row rank-usuario" @click="selecionarRank(rank[1])">
-                        <div class="col-4"><img class="img-rank" :src="require('../assets/perfil3.svg')"></div>
+                        <div class="col-4"><img class="img-rank" :src="require('../../assets/perfil3.svg')"></div>
                         <div class="col-8 rank-descricao">
                           <h2>Roberta Miranda</h2>
                           <h4>Herói Platina <span class="icon-platina"></span></h4>
                           <div class="icones1">
-                            <img :src="require('../assets/bate-papo.svg')">
-                            <img :src="require('../assets/amigo.svg')">
-                            <img :src="require('../assets/amizade.svg')">
+                            <img :src="require('../../assets/bate-papo.svg')">
+                            <img :src="require('../../assets/amigo.svg')">
+                            <img :src="require('../../assets/amizade.svg')">
                           </div>
                         </div>
                       </div>
                       <div class="row rank-usuario">
-                        <div class="col-4"><img class="img-rank" :src="require('../assets/perfil4.svg')"></div>
+                        <div class="col-4"><img class="img-rank" :src="require('../../assets/perfil4.svg')"></div>
                         <div class="col-8 rank-descricao">
                           <h2>Gustavo Silva</h2>
                           <h4>Herói Platina <span class="icon-platina"></span></h4>
                           <div class="icones1">
-                            <img :src="require('../assets/amizade.svg')">
-                            <img :src="require('../assets/mao.svg')">
-                            <img :src="require('../assets/bate-papo.svg')">
+                            <img :src="require('../../assets/amizade.svg')">
+                            <img :src="require('../../assets/mao.svg')">
+                            <img :src="require('../../assets/bate-papo.svg')">
                           </div>
                         </div>
                       </div>
@@ -139,9 +139,9 @@
                       <h4>Herói Platina <span class="icon-platina"></span></h4>
                     </div>
                     <div class="icones2">
-                      <img :src="require('../assets/1.svg')">
-                      <img :src="require('../assets/2.svg')">
-                      <img :src="require('../assets/3.svg')">
+                      <img :src="require('../../assets/1.svg')">
+                      <img :src="require('../../assets/2.svg')">
+                      <img :src="require('../../assets/3.svg')">
                     </div>
                     <div class="text-center">
                       {{selecionado.descricao}}
@@ -158,13 +158,13 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-4 d-none d-md-block">
-              <img :src="require('../assets/orgao.svg')" class="img-fluid">
+              <img :src="require('../../assets/orgao.svg')" class="img-fluid">
             </div>
             <div class="col-md-8 text-justify">
               <h1>Instituições</h1>
               <h2 class="my-4">Na plataforma a instituição pode realizar seu cadastro e cadastrar seus colaboradores, permitindo ainda, a visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
               </h2>
-              <router-link :to="{name: 'CadastroOrgao'}" tag="button">SEJA UM PARCEIRO</router-link>
+              <router-link :to="{name: 'CadastroInstituicao'}" tag="button">SEJA UM PARCEIRO</router-link>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@
                     </div>
                   </div>
                   <div class="col-4">
-                    <img :src="require('../assets/saudemental.png')" class="saudemental">
+                    <img :src="require('../../assets/saudemental.png')" class="saudemental">
                   </div>
                 </div>
               </div>
@@ -205,23 +205,23 @@ export default {
       rank: [
         {
           descricao: 'Bete está no ramo da psicologia há 3 anos. Possui uma clínica de atendimento com especialização em transtornos de ansiedade.',
-          imagem: require('../assets/bete.svg'),
+          imagem: require('../../assets/bete.svg'),
           nome: 'Bete Santos'
         },
         {
           descricao: 'Psicóloga Clínica especializada em Terapia Cognitivo Comportamental. Atuação como psicoterapeuta em todas as faixas etárias em consultório particular e em rede pública.  Órgão: Semsa',
-          imagem: require('../assets/perfil3.svg'),
+          imagem: require('../../assets/perfil3.svg'),
           nome: 'Amanda Louise'
         },
         {
           descricao: 'Sou psicólogo e mestrando em Psicologia da Saúde. Tenho 5 anos de experiência profissional em Saúde, formação de docentes e Psicologia Clínica.  Órgão: Susam',
-          imagem: require('../assets/perfil2.svg'),
+          imagem: require('../../assets/perfil2.svg'),
           nome: 'Roberta Miranda'
         }
       ],
       selecionado: {
         descricao: 'Bete está no ramo da psicologia há 3 anos. Possui uma clínica de atendimento com especialização em transtornos de ansiedade.',
-        imagem: require('../assets/bete.svg'),
+        imagem: require('../../assets/bete.svg'),
         nome: 'Bete Santos'
       }
     }
@@ -496,14 +496,14 @@ export default {
           display: inline-block;
           width: 15px;
           height: 15px;
-          background-image: url('../assets/diamante.svg');
+          background-image: url('../../assets/diamante.svg');
           background-size: 15px 15px;
         }
         .icon-platina{
           display: inline-block;
           width: 15px;
           height: 15px;
-          background-image: url('../assets/platina.svg');
+          background-image: url('../../assets/platina.svg');
           background-size: 15px 15px;
         }
         .rank-selecionado{

@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-md-4">
         <div class="d-flex justify-content-center">
-          <img :src="require('../assets/Agendamentos.svg')" class="img-fluid" width="350px">
+          <img :src="require('../../../assets/Agendamentos.svg')" class="img-fluid" width="350px">
         </div>
         <div class="d-flex justify-content-center">
-          <img :src="require('../assets/agendamento.svg')" class="img-fluid" width="350px">
+          <img :src="require('../../../assets/agendamento.svg')" class="img-fluid" width="350px">
         </div>
       </div>
       <div class="col-md-8">
@@ -40,8 +40,8 @@
               <td class="tg-hmp38">17:00h PM</td>
               <td class="tg-hmp38">18/04/2020<br></td>
               <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
               </td>
             </tr>
             <tr>
@@ -49,8 +49,8 @@
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">11:00h AM</span><br></td>
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">19/04/2020</span></td>
               <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
               </td>
             </tr>
             <tr>
@@ -58,8 +58,8 @@
               <td class="tg-hmp38">14:00 PM</td>
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">21/04/2020</span><br></td>
               <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
               </td>
             </tr>
             <tr>
@@ -67,8 +67,8 @@
               <td class="tg-hmp38">16:00 PM</td>
               <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">20/04/2020</span></td>
               <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../assets/cancel.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
+                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
               </td>
             </tr>
           </table>

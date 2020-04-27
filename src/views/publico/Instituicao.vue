@@ -23,7 +23,7 @@
       visualização das confirmações de atendimento e o cenário de avaliações dos usuários do serviço.
     </h2>
     <div class="d-flex justify-content-center">
-      <router-link :to="{name: 'CadastroOrgao'}" class="psi-btn mt-4" tag="button">SEJA UM PARCEIRO</router-link>
+      <router-link :to="{name: 'CadastroInstituicao'}" class="psi-btn mt-4" tag="button">SEJA UM PARCEIRO</router-link>
     </div>
   </div>
 </template>

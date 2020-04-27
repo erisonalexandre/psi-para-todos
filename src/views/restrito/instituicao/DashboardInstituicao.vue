@@ -96,50 +96,50 @@
           <div class="d-flex justify-content-center">
             <div class="container">
               <div class="row rank-usuario">
-                <div class="col-4"><img :src="require('../assets/perfil1.svg')"></div>
+                <div class="col-4"><img :src="require('../../../assets/perfil1.svg')"></div>
                 <div class="col-8 rank-descricao">
                   <h2>Carlos Assunção</h2>
                   <h4>Herói Diamante <span class="icon-diamante"></span></h4>
                   <div class="icones1">
-                    <img :src="require('../assets/amizade.svg')">
-                    <img :src="require('../assets/bate-papo.svg')">
-                    <img :src="require('../assets/amigo.svg')">
+                    <img :src="require('../../../assets/amizade.svg')">
+                    <img :src="require('../../../assets/bate-papo.svg')">
+                    <img :src="require('../../../assets/amigo.svg')">
                   </div>
                 </div>
               </div>
               <div class="row rank-usuario">
-                <div class="col-4"><img :src="require('../assets/perfil2.svg')"></div>
+                <div class="col-4"><img :src="require('../../../assets/perfil2.svg')"></div>
                 <div class="col-8 rank-descricao">
                   <h2>Amanda Louise</h2>
                   <h4>Herói Diamante <span class="icon-diamante"></span></h4>
                   <div class="icones1">
-                    <img :src="require('../assets/mao.svg')">
-                    <img :src="require('../assets/bate-papo1.svg')">
-                    <img :src="require('../assets/amizade.svg')">
+                    <img :src="require('../../../assets/mao.svg')">
+                    <img :src="require('../../../assets/bate-papo1.svg')">
+                    <img :src="require('../../../assets/amizade.svg')">
                   </div>
                 </div>
               </div>
               <div class="row rank-usuario">
-                <div class="col-4"><img :src="require('../assets/perfil3.svg')"></div>
+                <div class="col-4"><img :src="require('../../../assets/perfil3.svg')"></div>
                 <div class="col-8 rank-descricao">
                   <h2>Roberta Miranda</h2>
                   <h4>Herói Platina <span class="icon-platina"></span></h4>
                   <div class="icones1">
-                    <img :src="require('../assets/bate-papo.svg')">
-                    <img :src="require('../assets/amigo.svg')">
-                    <img :src="require('../assets/amizade.svg')">
+                    <img :src="require('../../../assets/bate-papo.svg')">
+                    <img :src="require('../../../assets/amigo.svg')">
+                    <img :src="require('../../../assets/amizade.svg')">
                   </div>
                 </div>
               </div>
               <div class="row rank-usuario">
-                <div class="col-4"><img :src="require('../assets/perfil4.svg')"></div>
+                <div class="col-4"><img :src="require('../../../assets/perfil4.svg')"></div>
                 <div class="col-8 rank-descricao">
                   <h2>Gustavo Silva</h2>
                   <h4>Herói Platina <span class="icon-platina"></span></h4>
                   <div class="icones1">
-                    <img :src="require('../assets/amizade.svg')">
-                    <img :src="require('../assets/mao.svg')">
-                    <img :src="require('../assets/bate-papo.svg')">
+                    <img :src="require('../../../assets/amizade.svg')">
+                    <img :src="require('../../../assets/mao.svg')">
+                    <img :src="require('../../../assets/bate-papo.svg')">
                   </div>
                 </div>
               </div>
@@ -152,10 +152,10 @@
 </template>
 
 <script>
-import animarInputs from '../mixins/animarInputs'
+import animarInputs from '../../../mixins/animarInputs'
 
 export default {
-  name: 'DashboardOrgao',
+  name: 'DashboardInstituicao',
   data () {
     return {
       form: {

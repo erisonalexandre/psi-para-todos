@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@websanova/vue-auth": "^2.22.1-beta",
+    "@websanova/vue-auth": "^3.1.2-beta",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.11.0",
@@ -23,6 +23,7 @@
     "serve-static": "^1.14.1",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
+    "vue-bootstrap-datetimepicker": "^5.0.1",
     "vue-izitoast": "^1.2.1",
     "vue-router": "^3.1.6",
     "vue-select": "^3.10.1",

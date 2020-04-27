@@ -22,7 +22,7 @@
         </router-link>
       </div>
       <div class="col-md-4">
-        <router-link :to="{name: 'CadastroOrgao'}">
+        <router-link :to="{name: 'CadastroInstituicao'}">
           <card>
             <img class="img-fluid" v-if="imagensVisiveis" :src="require('../../assets/orgao.svg')">
             <template slot="footer">
