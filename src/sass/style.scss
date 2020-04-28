@@ -14,6 +14,7 @@ input, button, select, optgroup, textarea {
   font-family: 'Nunito', sans-serif
 }
 
+
 html, body {
   height: 100%;
   background-color: #F8F9FA;
@@ -81,6 +82,11 @@ button.psi-btn {
   min-height: calc(100% - 81px);
   padding: 20px 0;
 }
+
+.altura-min-100 {
+  min-height: calc(100% - 81px);
+}
+
 /*fontes para o titulo todos*/
 @font-face{
 	font-family: historicSeattle;

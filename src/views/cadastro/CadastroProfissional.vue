@@ -24,7 +24,7 @@
           <input type="text" class="form-control" v-model="form.cpf" required id="cpf">
         </div>
         <div class="form-group">
-          <label for="cpf" class="form-label">CRP</label>
+          <label for="crp" class="form-label">CRP</label>
           <input type="text" class="form-control" v-model="form.crp" required id="crp">
         </div>
         <div class="form-group">
@@ -120,23 +120,18 @@ export default {
     submit () {
       // const formData = this.$refs.form ? new FormData(this.$refs.form) : new FormData()
       this.liberarContinuar = false
-      this.$http.post('/professionals', this.form).then((response) => {
+      this.$http.post('/profissionais', this.form).then((response) => {
         this.$auth.login({
           data: this.form,
-          success: function ({ data }) {
-            this.$auth.token('jwt-auth', data.token)
-            this.$auth.user(data.user)
-            localStorage.setItem('user', JSON.stringify(data.user))
-            this.$toast.success('Bem vindo!', `Sucesso ${data.user.nome}`, this.$root.toastConfig.success)
-            this.$router.replace({ path: '/dashboard/' + data.user.perfil })
-            this.liberarContinuar = true
-          },
-          error: function (error) {
-            console.error(error)
-            this.$router.replace({ path: '/login' })
-          },
           rememberMe: true,
           fetchUser: false
+        }).then(({ data }) => {
+          this.$toast.success(`Bem vindo! ${data.data.nome}`, 'Sucesso', this.$root.toastConfig.success)
+          this.$router.replace({ path: 'dashboard/' + data.data.perfil })
+        },
+        (error) => {
+          console.error(error)
+          this.$router.replace({ path: '/login' })
         })
       })
         .catch((error) => {
