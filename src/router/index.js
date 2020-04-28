@@ -1,19 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Profissional from '../views/Profissional.vue'
-import Login from '../views/Login.vue'
-import Esqueci from '../views/Esqueci.vue'
+import Home from '../views/publico/Home.vue'
+import Profissional from '../views/publico/Profissional.vue'
+import Login from '../views/publico/Login.vue'
+import Esqueci from '../views/publico/Esqueci.vue'
 import Cadastro from '../views/cadastro/Cadastro.vue'
 import CadastroPaciente from '../views/cadastro/CadastroPaciente.vue'
 import CadastroProfissional from '../views/cadastro/CadastroProfissional.vue'
-import CadastroOrgao from '../views/cadastro/CadastroOrgao.vue'
-import DashboardPaciente from '../views/DashboardPaciente.vue'
-import DashboardProfissional from '../views/DashboardProfissional.vue'
-import DashboardOrgao from '../views/DashboardOrgao.vue'
+import CadastroInstituicao from '../views/cadastro/CadastroInstituicao.vue'
+import DashboardPaciente from '../views/restrito/paciente/DashboardPaciente.vue'
+import DashboardProfissional from '../views/restrito/profissional/DashboardProfissional.vue'
+import DashboardInstituicao from '../views/restrito/instituicao/DashboardInstituicao.vue'
 import OQueE from '../views/publico/OQueE'
 import Instituicao from '../views/publico/Instituicao'
 import SaudeMental from '../views/publico/SaudeMental'
+import Agenda from '../views/restrito/profissional/Agenda'
 
 Vue.use(VueRouter)
 
@@ -55,15 +56,6 @@ const routes = [
     path: '/cadastro/profissional',
     name: 'CadastroProfissional',
     component: CadastroProfissional
-    // meta: {
-    //   auth: {
-    //     roles: ['paciente'],
-    //     redirect: {
-    //       name: 'login'
-    //     },
-    //     forbiddenRedirect: '/403'
-    //   }
-    // }
   },
   {
     path: '/o-que-e',
@@ -95,16 +87,12 @@ const routes = [
     }
   },
   {
-    path: '/dashboard/organizacao',
-    redirect: '/dashboard/instituto'
-  },
-  {
-    path: '/dashboard/instituto',
-    name: 'DashboardOrgao',
-    component: DashboardOrgao,
+    path: '/dashboard/instituicao',
+    name: 'DashboardInstituicao',
+    component: DashboardInstituicao,
     meta: {
       auth: {
-        roles: ['organizacao'],
+        roles: ['instituicao'],
         redirect: {
           name: 'login'
         },
@@ -113,14 +101,37 @@ const routes = [
     }
   },
   {
-    path: '/cadastro/orgao',
-    name: 'CadastroOrgao',
-    component: CadastroOrgao
+    path: '/cadastro/Instituicao',
+    name: 'CadastroInstituicao',
+    component: CadastroInstituicao
+  },
+  {
+    path: '/dashboard/profissional/agenda',
+    name: 'ProfissionalAgenda',
+    component: Agenda,
+    meta: {
+      auth: {
+        roles: ['profissional'],
+        redirect: {
+          name: 'login'
+        },
+        forbiddenRedirect: '/403'
+      }
+    }
   },
   {
     path: '/dashboard/profissional',
     name: 'DashboardProfissional',
-    component: DashboardProfissional
+    component: DashboardProfissional,
+    meta: {
+      auth: {
+        roles: ['profissional'],
+        redirect: {
+          name: 'login'
+        },
+        forbiddenRedirect: '/403'
+      }
+    }
   }
 
 ]

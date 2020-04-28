@@ -6,37 +6,36 @@ const config = {
   auth: bearer,
   http: axios,
   router: router,
-  tokenDefaultName: 'jwt-auth',
-  tokenStore: ['localStorage'],
-  rolesVar: 'perfil',
+  tokenDefaultKey: 'jwt-auth',
+  rolesKey: 'perfil',
 
   // API endpoints used in Vue Auth.
   registerData: {
-    url: '/user',
+    url: 'auth/user',
     method: 'POST',
     redirect: '/login'
   },
   loginData: {
-    url: '/sessions',
+    url: 'auth/login',
     method: 'POST',
     redirect: '',
     fetchUser: true
   },
   logoutData: {
-    url: '/logout',
+    url: 'auth/logout',
     method: 'POST',
     redirect: '/',
     makeRequest: false
   },
   fetchData: {
-    url: '/user',
+    url: 'auth/user',
     method: 'POST',
-    enabled: false
+    enabled: true
   },
   refreshData: {
-    url: '/refresh',
+    url: 'auth/refresh',
     method: 'GET',
-    enabled: false,
+    enabled: true,
     interval: 30
   }
 }
