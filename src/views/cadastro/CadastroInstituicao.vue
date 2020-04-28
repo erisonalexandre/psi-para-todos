@@ -116,10 +116,10 @@ export default {
         this.$auth.login({
           data: this.form,
           rememberMe: true,
-          fetchUser: false
+          fetchUser: true
         }).then(({ data }) => {
           this.$toast.success(`Bem vindo! ${data.data.nome}`, 'Sucesso', this.$root.toastConfig.success)
-          this.$router.replace({ path: 'dashboard/' + data.data.perfil })
+          this.$router.replace({ path: '/dashboard/' + data.data.perfil })
         },
         (error) => {
           console.error(error)
