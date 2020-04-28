@@ -66,9 +66,6 @@
                 <p>Continuar</p>
                 <span>></span>
               </button>
-              <div class="d-flex justify-content-center">
-                <router-link :to="{name: 'Cadastro'}">Voltar</router-link>
-              </div>
             </div>
             <div class="d-flex justify-content-center mt-2">
               <button class="btn psi-btn pl-2 mr-2 d-flex d-md-none" @click="voltar">
@@ -124,10 +121,10 @@ export default {
         this.$auth.login({
           data: this.form,
           rememberMe: true,
-          fetchUser: false
+          fetchUser: true
         }).then(({ data }) => {
           this.$toast.success(`Bem vindo! ${data.data.nome}`, 'Sucesso', this.$root.toastConfig.success)
-          this.$router.replace({ path: 'dashboard/' + data.data.perfil })
+          this.$router.replace({ path: '/dashboard/' + data.data.perfil })
         },
         (error) => {
           console.error(error)

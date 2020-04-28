@@ -9,6 +9,7 @@
       <b-collapse id="nav-collapse" class="ml-md-4" is-nav>
         <b-navbar-nav>
           <router-link v-if="$auth.check('profissional')" :to="{name: 'DashboardProfissional'}" class="nav-link">Dashboard</router-link>
+          <router-link v-if="$auth.check('profissional')" :to="{name: 'ProfissionalAgenda'}" class="nav-link">Agenda</router-link>
           <router-link v-if="$auth.check('paciente')" :to="{name: 'DashboardPaciente'}" class="nav-link">Dashboard</router-link>
           <router-link v-if="$auth.check('instituicao')" :to="{name: 'DashboardInstituicao'}" class="nav-link">Dashboard</router-link>
           <a href="/#voce-profissional" class="nav-link">Profissional</a>
