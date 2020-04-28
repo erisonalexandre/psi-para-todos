@@ -45,6 +45,7 @@ Vue.use(VueAxios, axios.create({
 }))
 Vue.use(VueRouter)
 Vue.use(VueAuth, auth)
+Vue.use(require('vue-moment'))
 Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false
 
 Vue.config.productionTip = process.env.VUE_APP_PRODUCTION_TIP

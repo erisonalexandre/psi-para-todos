@@ -29,46 +29,19 @@
             </p>
           </template>
           <table class="table table-borderless">
-            <tr>
+            <tr class="text-center">
               <td class="tg-hmp39">Paciente</td>
               <td class="tg-hmp39">Horário</td>
               <td class="tg-hmp39">Data</td>
               <td class="tg-hmp39">Ação</td>
             </tr>
-            <tr>
-              <td class="tg-hmp38">Sr. Amarildo</td>
-              <td class="tg-hmp38">17:00h PM</td>
-              <td class="tg-hmp38">18/04/2020<br></td>
-              <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
-              </td>
-            </tr>
-            <tr>
-              <td class="tg-hmp38">Sra. Bruna</td>
-              <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">11:00h AM</span><br></td>
-              <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">19/04/2020</span></td>
-              <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
-              </td>
-            </tr>
-            <tr>
-              <td class="tg-hmp38">Sra Renata</td>
-              <td class="tg-hmp38">14:00 PM</td>
-              <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">21/04/2020</span><br></td>
-              <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
-              </td>
-            </tr>
-            <tr>
-              <td class="tg-hmp38">Sr Apollo</td>
-              <td class="tg-hmp38">16:00 PM</td>
-              <td class="tg-hmp38"><span style="font-weight:400;font-style:normal">20/04/2020</span></td>
-              <td class="tg-hmp38">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/confirm.svg')">
-                <input type="image" width="15px" alt="confirm" :src="require('../../../assets/cancel.svg')">
+            <tr v-for="(agenda, index) in agendamentosPendentes" :key="index">
+              <td class="tg-hmp38">{{ agenda.paciente }}</td>
+              <td class="tg-hmp38 text-center">{{ agenda.hora }}</td>
+              <td class="tg-hmp38 text-center">{{ agenda.data | moment('DD/MM/YYYY') }}<br></td>
+              <td class="tg-hmp38 text-center">
+                <span class="mr-2 text-success" @click="aprovarAgendamento(agenda.id)"><i class="fas fa-check-square"></i></span>
+                <span class="text-danger"><i class="fas fa-ban"></i></span>
               </td>
             </tr>
           </table>
@@ -80,7 +53,29 @@
 
 <script>
 export default {
-  name: 'Login'
+  name: 'DashboardProfissional',
+  data () {
+    return {
+      agendamentosPendentes: []
+    }
+  },
+  created () {
+    this.getAgendamentosPendentes()
+  },
+  methods: {
+    getAgendamentosPendentes () {
+      this.$http.get('agendamentos-pendentes')
+        .then(({ data }) => {
+          this.agendamentosPendentes = data
+        })
+    },
+    aprovarAgendamento (agendamentoId) {
+      this.$http.post('aprovar-agendamento', { agendamento_id: agendamentoId })
+        .then((response) => {
+          this.getAgendamentosPendentes()
+        })
+    }
+  }
 }
 </script>
 
@@ -112,6 +107,15 @@ export default {
   /* or 21px */
 
   color: #A6A0A0;
+
+  span {
+    cursor: pointer;
+    transition: .3s
+  }
+
+  span:hover {
+    filter: brightness(0.8)
+  }
 }
 
 .headerTable{

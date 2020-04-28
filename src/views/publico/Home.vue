@@ -81,7 +81,7 @@
                   <card class="px-3">
                     <div class="container">
                       <div class="row rank-usuario" @click="selecionarRank(rank[0])">
-                        <div class="col-4"><img class="img-rank" :src="require('../../assets/bete.svg')"></div>
+                        <div class="col-4"><img class="img-rank" :src="require('../../assets/bete.png')"></div>
                         <div class="col-8 rank-descricao">
                           <h2>Bete Santos</h2>
                           <h4>Herói Diamante <span class="icon-diamante"></span></h4>
@@ -205,7 +205,7 @@ export default {
       rank: [
         {
           descricao: 'Bete está no ramo da psicologia há 3 anos. Possui uma clínica de atendimento com especialização em transtornos de ansiedade.',
-          imagem: require('../../assets/bete.svg'),
+          imagem: require('../../assets/bete.png'),
           nome: 'Bete Santos'
         },
         {
@@ -221,7 +221,7 @@ export default {
       ],
       selecionado: {
         descricao: 'Bete está no ramo da psicologia há 3 anos. Possui uma clínica de atendimento com especialização em transtornos de ansiedade.',
-        imagem: require('../../assets/bete.svg'),
+        imagem: require('../../assets/bete.png'),
         nome: 'Bete Santos'
       }
     }

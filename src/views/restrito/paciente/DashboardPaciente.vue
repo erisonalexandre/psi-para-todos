@@ -22,51 +22,15 @@
             </div>
             <div v-if="mostrarLista" class="modal-body p-0 partfive">
               <div>
-                <div class="row rank-usuario rank-usuario-cor-nao" @click="selecionarRank(rank[0])">
-                  <div class="col-4"><img class="img-rank" :src="require('../../../assets/perfil1.svg')"></div>
+                <div v-for="(item, index) in rank" class="row rank-usuario rank-usuario-cor-nao" @click="selecionarRank(index, item.id)" :key="index">
+                  <div class="col-4"><img class="img-rank" :src="require('../../../assets/profile.png')"></div>
                   <div class="col-8 rank-descricao">
-                    <h2>Bete Santos</h2>
+                    <h2>{{ item.nome }}</h2>
                     <h4>Herói Diamante <span class="icon-diamante"></span></h4>
                     <div class="icones1">
                       <img :src="require('../../../assets/amizade.svg')">
                       <img :src="require('../../../assets/bate-papo.svg')">
                       <img :src="require('../../../assets/amigo.svg')">
-                    </div>
-                  </div>
-                </div>
-                <div class="row rank-usuario rank-usuario-cor-sim" @click="selecionarRank(rank[2])">
-                  <div class="col-4"><img class="img-rank" :src="require('../../../assets/perfil2.svg')"></div>
-                  <div class="col-8 rank-descricao">
-                    <h2>Amanda Louise</h2>
-                    <h4>Herói Diamante <span class="icon-diamante"></span></h4>
-                    <div class="icones1">
-                      <img :src="require('../../../assets/mao.svg')">
-                      <img :src="require('../../../assets/bate-papo1.svg')">
-                      <img :src="require('../../../assets/amizade.svg')">
-                    </div>
-                  </div>
-                </div>
-                <div class="row rank-usuario rank-usuario-cor-nao" @click="selecionarRank(rank[1])">
-                  <div class="col-4"><img class="img-rank" :src="require('../../../assets/perfil3.svg')"></div>
-                  <div class="col-8 rank-descricao">
-                    <h2>Roberta Miranda</h2>
-                    <h4>Herói Platina <span class="icon-platina"></span></h4>
-                    <div class="icones1">
-                      <img :src="require('../../../assets/bate-papo.svg')">
-                      <img :src="require('../../../assets/amigo.svg')">
-                      <img :src="require('../../../assets/amizade.svg')">
-                    </div>
-                  </div>
-                </div>
-                <div class="row rank-usuario rank-usuario-cor-sim">
-                  <div class="col-4"><img class="img-rank" :src="require('../../../assets/perfil4.svg')"></div>
-                  <div class="col-8 rank-descricao">
-                    <h2>Gustavo Silva</h2>
-                    <h4>Herói Platina <span class="icon-platina"></span></h4>
-                    <div class="icones1">
-                      <img :src="require('../../../assets/amizade.svg')">
-                      <img :src="require('../../../assets/mao.svg')">
-                      <img :src="require('../../../assets/bate-papo.svg')">
                     </div>
                   </div>
                 </div>
@@ -76,7 +40,7 @@
               <div>
                 <div class="rank-selecionado">
                   <div class="img-rank-usuario">
-                    <img class="img-rank-selecionado" :src="selecionado.imagem">
+                    <img class="img-rank-selecionado" :src="require('../../../assets/profile.png')">
                     <h4>Herói Platina <span class="icon-platina"></span></h4>
                   </div>
                   <div class="icones2">
@@ -90,7 +54,7 @@
                 </div>
                 <div>
                   <h2 class="text-center mt-4">Selecione um horário disponível</h2>
-                  <v-select :options="options"></v-select>
+                  <v-select label="hora" :options="options" v-model="horaSelecionada"></v-select>
                 </div>
                 <div class="d-flex justify-content-center my-3">
                   <button @click="voltar" class="psi-btn mb-4 pl-2">
@@ -119,6 +83,7 @@
 
 <script>
 import { ptBR } from 'vuejs-datepicker/dist/locale'
+import moment from 'moment'
 export default {
   name: 'DashboardPaciente',
   data () {
@@ -133,26 +98,12 @@ export default {
         '16:00'
       ],
       mostrarLista: true,
-      rank: [
-        {
-          descricao: 'Bete está no ramo da psicologia há 3 anos. Possui uma clínica de atendimento com especialização em transtornos de ansiedade.',
-          imagem: require('../../../assets/bete.svg'),
-          nome: 'Bete Santos'
-        },
-        {
-          descricao: 'Psicóloga Clínica especializada em Terapia Cognitivo Comportamental. Atuação como psicoterapeuta em todas as faixas etárias em consultório particular e em rede pública.  Órgão: Semsa',
-          imagem: require('../../../assets/perfil3.svg'),
-          nome: 'Amanda Louise'
-        },
-        {
-          descricao: 'Sou psicólogo e mestrando em Psicologia da Saúde. Tenho 5 anos de experiência profissional em Saúde, formação de docentes e Psicologia Clínica.  Órgão: Susam',
-          imagem: require('../../../assets/perfil2.svg'),
-          nome: 'Roberta Miranda'
-        }
-      ],
+      horaSelecionada: null,
+      dataSelecionada: null,
+      rank: [],
       selecionado: {
         descricao: 'Bete está no ramo da psicologia há 3 anos. Possui uma clínica de atendimento com especialização em transtornos de ansiedade.',
-        imagem: require('../../../assets/bete.svg'),
+        imagem: require('../../../assets/profile.png'),
         nome: 'Bete Santos'
       }
     }
@@ -160,19 +111,31 @@ export default {
   methods: {
     agendar () {
       this.$toast.success('Seu agendamento foi feito com sucesso', 'Sucesso!', this.$root.toastConfig.success)
-      $('#modalAgendamento').modal('hide')
+      this.$http.post('agendamento', {
+        agendas_id: this.horaSelecionada.id
+      }).then(({ data }) => {
+        $('#modalAgendamento').modal('hide')
+      })
     },
     voltar () {
       this.mostrarLista = true
     },
-    selecionarRank (value) {
+    selecionarRank (value, id) {
       this.selecionado = value
-      this.mostrarLista = false
+      this.$http.get('agenda/' + this.dataSelecionada + '/' + id)
+        .then(({ data }) => {
+          this.options = data
+          this.mostrarLista = false
+        })
     },
     modalShow (e) {
-      $('#modalAgendamento').modal('show')
-      this.mostrarLista = true
-      console.log(e)
+      this.dataSelecionada = moment(e).format('YYYY-MM-DD')
+      this.$http.get('profissionais/' + this.dataSelecionada)
+        .then(({ data }) => {
+          this.rank = data
+          $('#modalAgendamento').modal('show')
+          this.mostrarLista = true
+        })
     }
   }
 }
